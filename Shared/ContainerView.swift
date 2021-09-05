@@ -60,7 +60,7 @@ struct ContainerView: View {
                             /* print("\(#fileID):\(#line): Dreg \(item.id!.uuidString) ") */
                             return NSItemProvider(
                                 item: .some(item.id!.uuidString as NSSecureCoding),
-                                typeIdentifier: String(kUTTypePlainText))
+                                typeIdentifier: "public.plain-text")
                         }
                         // .onDeleteCommand(perform: { print("Fjernar \(item.id?.uuidString ?? "ukjent ting").") } )
                 }
@@ -81,7 +81,7 @@ struct ContainerView: View {
                             .scaleEffect(1.25)
                             .padding(10)
                     }
-                    .buttonStyle(LinkButtonStyle())
+                    .buttonStyle(CustomButtonStyle())
                 }
                 Form {
                     Section(header: Text("Ny oppbevaring")) {
@@ -123,8 +123,8 @@ struct ItemDropDelegate: DropDelegate {
         }*/
         print("Mottar eit dropp…")
 
-        let items = info.itemProviders(for: [String(kUTTypePlainText)])
-        print("\(#fileID):\(#line): Mottok eit dropp med \(items.count) ting av typen \(String(kUTTypePlainText)).")
+        let items = info.itemProviders(for: ["public.plain-text"])
+        print("\(#fileID):\(#line): Mottok eit dropp med \(items.count) ting av typen \("public.plain-text").")
         
         for _ in items {
             self.appModel.drop(to: self.target.id!)

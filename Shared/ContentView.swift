@@ -32,39 +32,38 @@ struct ContentView: View {
                     Text("Vel pakkeliste")
                     Text("Ny pakkeliste")
                 }
+            } else {
+                Text("Meny")
             }
-            #endif
-            #if os(macOS)
+            #elseif os(macOS)
                 List {
                     Text("Vel pakkeliste")
                     Text("Ny pakkeliste")
                 }
             #endif
-                List {
-                    ForEach(containers, id: \.id) { container in
-                        ContainerView(container)
-                            .onDrop(of: [String(kUTTypePlainText)], delegate: ItemDropDelegate(appModel: self.appModel, target: container))
-                    }
-                    if self.items.filter({
-                        $0.container == nil
-                    }).count > 0 {
-                        ContainerView(
-                            "Manglar beholdar",
-                            items: self.items.filter({$0.container == nil})
-                        )
-                    }
-               // }
-                    Spacer()
+            List {
+                ForEach(containers, id: \.id) { container in
+                    ContainerView(container)
+                        .onDrop(of: ["public.plain-text"], delegate: ItemDropDelegate(appModel: self.appModel, target: container))
+                }
+                if self.items.filter({
+                    $0.container == nil
+                }).count > 0 {
+                    ContainerView(
+                        "Manglar beholdar",
+                        items: self.items.filter({$0.container == nil})
+                    )
+                }
             }.toolbar {
                 #if os(iOS)
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Spacer()
-                    NavigationLink(
+                    /*NavigationLink(
                         destination: NewItemView(),
                         tag: AppState.newItem.rawValue,
                         selection: self.$appModel.selection) {
                         Text("Add item")
-                    }
+                    }*/
                     NavigationLink(
                         destination: NewContainerView(),
                         tag: AppState.newContainer.rawValue,
