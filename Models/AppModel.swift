@@ -9,7 +9,7 @@ public enum AppState: String {
 public class AppModel: ObservableObject {/*
     @Published public var items: [Item]
     @Published public var containers: [Container] */
-    @Published public var selection: String? = nil
+    @Published public var selection: UUID? = nil
     @Published public var newContainer: Bool = false
     public var draggedItem: Item? = nil
     public var moc: NSManagedObjectContext? = nil
@@ -32,7 +32,6 @@ public class AppModel: ObservableObject {/*
     public func drop(to newId: UUID) {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Container")
         fetchRequest.predicate = NSPredicate(format: "id == %@", newId.uuidString)
-        
         
         let newContainer: NSManagedObject?
         
@@ -74,14 +73,24 @@ public class AppModel: ObservableObject {/*
     
     //MARK: Containers
     public func addContainer(name: String) { // throws {
-        if self.containerExists(name: name) {
+        /*if self.containerExists(name: name) {
             // throw
+            return
+        }*/
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "PackingList")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", self.selection!.uuidString)
+        var result: NSManagedObject
+        do {
+            result = try self.moc!.fetch(fetchRequest).first!
+        } catch {
+            print("\(#fileID):\(#line): error executing fetch request: \(error)")
             return
         }
         
         let container = Container(context: self.moc!)
         container.id = UUID()
         container.name = name
+        container.packingList = result as! PackingList
         
         self.saveContext()
     }
