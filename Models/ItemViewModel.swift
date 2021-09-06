@@ -35,6 +35,7 @@ public class ItemViewModel: ObservableObject {
         self.model.isPacked = self.isPacked
         
         self.saveContext()
+        self.isEditing = false
     }
     
     public func remove() {
