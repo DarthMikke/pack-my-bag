@@ -52,7 +52,7 @@ public struct NewItemView: View {
 
 struct CustomToggleStyle: ToggleStyle {
     func makeBody(configuration: Configuration) -> some View {
-        #if os(iOS)
+    //    #if os(iOS)
         return HStack {
             Image(systemName: configuration.isOn
                     ? "circle.fill"
@@ -61,8 +61,8 @@ struct CustomToggleStyle: ToggleStyle {
         }.onTapGesture {
             configuration.isOn.toggle()
         }
-        #elseif os(macOS)
+    /*    #elseif os(macOS)
         return configuration.label.toggleStyle(CheckboxToggleStyle())
-        #endif
+        #endif */
     }
 }
