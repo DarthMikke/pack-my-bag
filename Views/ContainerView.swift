@@ -21,54 +21,53 @@ struct ContainerView: View {
     }
     
     var body: some View {
-        //Section(
-        //    header:
-        VStack {
-            HStack {
-                Button(action: {
-                    withAnimation {
-                        self.viewmodel.collapsed.toggle()
-                    }
-                }) {
-                    Image(systemName:
-                            viewmodel.collapsed
-                                ? "arrowtriangle.right.fill"
-                                : "arrowtriangle.down.fill"
-                    )
-                }
-                Text(viewmodel.name)
-                Spacer()
-                if self.viewmodel.model != nil {
+        Section(
+            header:
+                HStack {
                     Button(action: {
-                        // Rediger
-                        self.viewmodel.isEditing = true
-                    }) { Image(systemName: "square.and.pencil") }
-                }
-                Button(action: {
-                    // Ny ting
-                    self.viewmodel.newItem = true
-                }) { Image(systemName: "plus") }
-            }.buttonStyle(CustomButtonStyle())
-        //) {
-            if !viewmodel.collapsed {
-                if viewmodel.newItem {
-                    NewItemView(isPresented: $viewmodel.newItem, container: self.viewmodel.model)
-                }
-                ForEach(viewmodel.items, id: \.id) { item in
-                    ItemView(item: item)
-                        .onDrag { self.appModel.drag(item: item)
-                            /* print("\(#fileID):\(#line): Dreg \(item.id!.uuidString) ") */
-                            return NSItemProvider(
-                                item: .some(item.id!.uuidString as NSSecureCoding),
-                                typeIdentifier: "public.plain-text")
+                        withAnimation {
+                            self.viewmodel.collapsed.toggle()
                         }
-                        // .onDeleteCommand(perform: { print("Fjernar \(item.id?.uuidString ?? "ukjent ting").") } )
+                    }) {
+                        Image(systemName:
+                                viewmodel.collapsed
+                                    ? "arrowtriangle.right.fill"
+                                    : "arrowtriangle.down.fill"
+                        )
+                    }
+                    Text(viewmodel.name)
+                    Spacer()
+                    if self.viewmodel.model != nil {
+                        Button(action: {
+                            // Rediger
+                            self.viewmodel.isEditing = true
+                        }) { Image(systemName: "square.and.pencil") }
+                    }
+                    Button(action: {
+                        // Ny ting
+                        self.viewmodel.newItem = true
+                    }) { Image(systemName: "plus") }
+                }.buttonStyle(CustomButtonStyle())
+            ) {
+                if !viewmodel.collapsed {
+                    if viewmodel.newItem {
+                        NewItemView(isPresented: $viewmodel.newItem, container: self.viewmodel.model)
+                    }
+                    ForEach(viewmodel.items, id: \.id) { item in
+                        ItemView(item: item)
+                            .onDrag { self.appModel.drag(item: item)
+                                /* print("\(#fileID):\(#line): Dreg \(item.id!.uuidString) ") */
+                                return NSItemProvider(
+                                    item: .some(item.id!.uuidString as NSSecureCoding),
+                                    typeIdentifier: "public.plain-text")
+                            }
+                            // .onDeleteCommand(perform: { print("Fjernar \(item.id?.uuidString ?? "ukjent ting").") } )
+                    }
+                    .onDelete(perform: { print("\(#fileID):\(#line): \($0)") })
                 }
-                .onDelete(perform: { print("\(#fileID):\(#line): \($0)") })
             }
-        }
-        .sheet(isPresented: $viewmodel.isEditing) {
-            ///- TODO: Kan dette integrerast i NewContainerView?
+            .sheet(isPresented: $viewmodel.isEditing) {
+            //TODO: Kan dette integrerast i NewContainerView?
             VStack {
                 HStack {
                     Spacer()

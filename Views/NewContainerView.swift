@@ -34,12 +34,12 @@ public struct NewContainerView: View {
                         Text("Lagre")
                     }
                     .buttonStyle(CustomButtonStyle())
-                    .disabled(self.cannotSave)
+                    //.disabled(self.cannotSave)
                 }
             }
             .padding(20)
         }
-        .onChange(of: self.newContainerName, perform: { oldValue in
+        /*.onChange(of: self.newContainerName, perform: { oldValue in
             print("Checking for existing container named \(self.newContainerName)...")
             let cannotSave: Bool = {
                 if self.newContainerName == "" {
@@ -49,13 +49,12 @@ public struct NewContainerView: View {
             }()
             print(cannotSave ? "Kan ikkje lagre." : "Kan lagre.")
             self.cannotSave = cannotSave
-        })
+        })*/
     }
     
     fileprivate func addContainer() {
         self.appModel.addContainer(name: self.newContainerName)
         self.appModel.newContainer = false
-        self.appModel.selection = nil
     }
 }
 

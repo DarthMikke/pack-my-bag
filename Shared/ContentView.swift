@@ -33,38 +33,41 @@ struct ContentView: View {
                 ForEach(lists, id: \.id) { list in
                     NavigationLink(
                         destination: PackingListView(model: list)
+                            .navigationTitle(list.name ?? "Ukjent liste")
                             .toolbar {
-                            #if os(iOS)
-                            ToolbarItemGroup(placement: .navigationBarTrailing) {
-                                Spacer()
-                                /*NavigationLink(
-                                    destination: NewItemView(),
-                                    tag: AppState.newItem.rawValue,
-                                    selection: self.$appModel.selection) {
-                                    Text("Add item")
-                                }*/
-                                NavigationLink(
-                                    destination: NewContainerView(),
-                                    tag: AppState.newContainer.rawValue,
-                                    selection: self.$appModel.selection) {
-                                    Text("Add container")
+                                #if os(iOS)
+                                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                                    Spacer()
+                                    /*NavigationLink(
+                                        destination: NewItemView(),
+                                        tag: AppState.newItem.rawValue,
+                                        selection: self.$appModel.selection) {
+                                        Text("Add item")
+                                    }*/
+                                    NavigationLink(
+                                        destination: NewContainerView()
+                                    ) {
+                                        Text("Add container")
+                                    }
                                 }
+                                #elseif os(macOS)
+                                Spacer()
+                                Button(action: {
+                                    self.appModel.addContainerToView()
+                                }) {
+                                    Image(systemName: "bag.badge.plus")
+                                }
+                                #endif
                             }
-                            #elseif os(macOS)
-                            Spacer()
-                            Button(action: {
-                                self.appModel.addContainerToView()
-                            }) {
-                                Image(systemName: "bag.badge.plus")
-                            }
-                            #endif
-                        }
-                        .sheet(
-                            isPresented: $appModel.newContainer,
-                            onDismiss: {
-                                print("\(#fileID):\(#line): Dismissed")
-                                self.appModel.newContainer = false
-                            }) { NewContainerView() }
+                            .sheet(
+                                isPresented: $appModel.newContainer,
+                                onDismiss: {
+                                    print("\(#fileID):\(#line): Dismissed")
+                                    self.appModel.newContainer = false
+                                }
+                            ) { NewContainerView() },
+                        tag: list.id!,
+                        selection: self.$appModel.selection
                     ) {
                         Text(list.name ?? "Ukjent liste")
                     }
@@ -73,6 +76,32 @@ struct ContentView: View {
                     Text("Her var det tomt. Legg til ei liste for å begynne.")
                 }
             }
+            .toolbar {
+                #if os(iOS)
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Spacer()
+                    /*NavigationLink(
+                        destination: NewItemView(),
+                        tag: AppState.newItem.rawValue,
+                        selection: self.$appModel.selection) {
+                        Text("Add item")
+                    }*/
+                    NavigationLink(
+                        destination: NewContainerView()
+                    ) {
+                        Text("Add container")
+                    }
+                }
+                #elseif os(macOS)
+                Spacer()
+                Button(action: { //TODO: Ny liste
+                    //self.appModel.addContainerToView()
+                }) {
+                    Image(systemName: "text.badge.plus")
+                }
+                #endif
+            }
+            .navigationTitle("Pack my bag")
             
             Label("Vel ei liste i panelet til venstre.", systemImage: "arrow.left")
            /* .iOS {
