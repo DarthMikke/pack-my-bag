@@ -2,7 +2,7 @@
 //  Container+CoreDataProperties.swift
 //  Pack my Bag
 //
-//  Created by Michal Jan Warecki on 31/08/2021.
+//  Created by Michal Jan Warecki on 07/09/2021.
 //
 //
 
@@ -16,9 +16,10 @@ extension Container {
         return NSFetchRequest<Container>(entityName: "Container")
     }
 
-    @NSManaged public var name: String?
     @NSManaged public var id: UUID?
+    @NSManaged public var name: String?
     @NSManaged public var items: NSSet?
+    @NSManaged public var packingList: PackingList?
 
 }
 
