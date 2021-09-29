@@ -11,6 +11,7 @@ public class AppModel: ObservableObject {/*
     @Published public var containers: [Container] */
     @Published public var selection: UUID? = nil
     @Published public var newContainer: Bool = false
+    @Published public var newList: Bool = false
     public var draggedItem: Item? = nil
     public var moc: NSManagedObjectContext? = nil
     
@@ -115,6 +116,15 @@ public class AppModel: ObservableObject {/*
         }
         
         return results.count > 0
+    }
+    
+    //MARK: Lists
+    public func addList(name: String) {
+        let list = PackingList(context: self.moc!)
+        list.id = UUID()
+        list.name = name
+        
+        self.saveContext()
     }
     
     public func saveContext() {

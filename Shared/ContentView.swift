@@ -86,10 +86,10 @@ struct ContentView: View {
                         selection: self.$appModel.selection) {
                         Text("Add item")
                     }*/
-                    NavigationLink(
-                        destination: NewContainerView()
-                    ) {
-                        Text("Add container")
+                    Button(action: {
+                        self.appModel.newList = true
+                    }) {
+                        Text("Add list")
                     }
                 }
                 #elseif os(macOS)
@@ -102,6 +102,9 @@ struct ContentView: View {
                 #endif
             }
             .navigationTitle("Pack my bag")
+            .sheet(isPresented: $appModel.newList) {
+                NewListView()
+            }
             
             Label("Vel ei liste i panelet til venstre.", systemImage: "arrow.left")
            /* .iOS {
