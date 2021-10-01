@@ -44,12 +44,13 @@ public class ItemViewModel: ObservableObject {
     }
     
     public func saveContext() {
-        print("Saving changes.")
+        print("\(#fileID):\(#line): Saving changes.", terminator: " ")
         
         let context = model.managedObjectContext!
         
         if context.hasChanges {
             try? context.save()
         }
+        print("OK.")
     }
 }
