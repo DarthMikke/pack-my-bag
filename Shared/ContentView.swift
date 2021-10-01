@@ -44,9 +44,7 @@ struct ContentView: View {
                                         selection: self.$appModel.selection) {
                                         Text("Add item")
                                     }*/
-                                    NavigationLink(
-                                        destination: NewContainerView()
-                                    ) {
+                                    Button(action: { self.appModel.newContainer = true }) {
                                         Text("Add container")
                                     }
                                 }

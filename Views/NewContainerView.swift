@@ -25,20 +25,20 @@ public struct NewContainerView: View {
                         .scaleEffect(1.25)
                         .padding(10)
                 }
-                .buttonStyle(CustomButtonStyle())
+                .buttonStyle(CustomLinkButtonStyle())
             }
+            Text("Gje namn til ny seksjon").font(.headline)
             Form {
-                Section(header: Text("Ny oppbevaring")) {
+                Section(header: Text("Ny seksjon")) {
                     TextField("Namn", text: self.$newContainerName)
                     Button(action: self.addContainer) {
                         Text("Lagre")
                     }
-                    .buttonStyle(CustomButtonStyle())
+                    .buttonStyle(CustomLinkButtonStyle())
                     //.disabled(self.cannotSave)
                 }
             }
-            .padding(20)
-        }
+        }.background(Color(red: 242.0/255.0, green: 242.0/255.0, blue: 247.0/255.0))
         /*.onChange(of: self.newContainerName, perform: { oldValue in
             print("Checking for existing container named \(self.newContainerName)...")
             let cannotSave: Bool = {
@@ -55,16 +55,5 @@ public struct NewContainerView: View {
     fileprivate func addContainer() {
         self.appModel.addContainer(name: self.newContainerName)
         self.appModel.newContainer = false
-    }
-}
-
-struct CustomButtonStyle: ButtonStyle {
-    
-    func makeBody(configuration: Self.Configuration) -> some View {
-        #if os(macOS)
-        return configuration.label.buttonStyle(LinkButtonStyle())
-        #elseif os(iOS)
-        return configuration.label.buttonStyle(DefaultButtonStyle())
-        #endif
     }
 }
