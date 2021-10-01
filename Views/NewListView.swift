@@ -19,27 +19,27 @@ public struct NewListView: View {
                 Spacer()
                 Button(action: {
                     withAnimation {
-                        self.appModel.newContainer = false
+                        self.appModel.newList = false
                     }
                 }) {
                     Image(systemName: "xmark")
                         .scaleEffect(1.25)
                         .padding(10)
                 }
-                .buttonStyle(CustomButtonStyle())
+                .buttonStyle(CustomLinkButtonStyle())
             }
+            Text("Gje namn til ny liste").font(.headline)
             Form {
                 Section(header: Text("Ny liste")) {
                     TextField("Namn", text: self.$newList)
                     Button(action: self.addList) {
                         Text("Lagre")
                     }
-                    .buttonStyle(CustomButtonStyle())
+                    .buttonStyle(CustomLinkButtonStyle())
                     //.disabled(self.cannotSave)
                 }
             }
-            .padding(20)
-        }
+        }.background(Color(red: 242.0/255.0, green: 242.0/255.0, blue: 247.0/255.0))
         /*.onChange(of: self.newContainerName, perform: { oldValue in
             print("Checking for existing container named \(self.newContainerName)...")
             let cannotSave: Bool = {

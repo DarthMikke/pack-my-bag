@@ -47,7 +47,7 @@ struct ContainerView: View {
                         // Ny ting
                         self.viewmodel.newItem = true
                     }) { Image(systemName: "plus") }
-                }.buttonStyle(CustomButtonStyle())
+                }.buttonStyle(CustomHeaderButtonStyle())
             ) {
                 if !viewmodel.collapsed {
                     if viewmodel.newItem {
@@ -80,7 +80,7 @@ struct ContainerView: View {
                             .scaleEffect(1.25)
                             .padding(10)
                     }
-                    .buttonStyle(CustomButtonStyle())
+                    .buttonStyle(CustomLinkButtonStyle())
                 }
                 Form {
                     Section(header: Text("Ny oppbevaring")) {
@@ -102,7 +102,7 @@ struct ContainerView: View {
                             }
                         }
                     }
-                    .buttonStyle(CustomButtonStyle())
+                    .buttonStyle(CustomLinkButtonStyle())
                 }
                 .padding(20)
             }
