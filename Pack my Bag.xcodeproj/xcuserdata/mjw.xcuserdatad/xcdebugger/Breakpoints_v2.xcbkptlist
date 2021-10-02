@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "AE06469F-66A2-4B89-8D7B-A3B1863F5475"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9C3F4BD-F52D-4408-9A24-18C351DCD6C9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/ContainerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "performDrop(info:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D9C3F4BD-F52D-4408-9A24-18C351DCD6C9 - e46ff96f0f418617"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Pack_my_Bag.ItemDropDelegate.performDrop(info: SwiftUI.DropInfo) -&gt; Swift.Bool"
+                  moduleName = "Pack my Bag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mjw/Documents/Koding/Pack%20my%20Bag/Shared/ContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "123"
+                  endingLineNumber = "123"
+                  offsetFromSymbolStart = "1484">
+               </Location>
+               <Location
+                  uuid = "D9C3F4BD-F52D-4408-9A24-18C351DCD6C9 - 790a0f3c2e3c288"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Pack_my_Bag.ItemDropDelegate.performDrop(info: SwiftUI.DropInfo) -&gt; Swift.Bool"
+                  moduleName = "Pack my Bag"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mjw/Documents/Koding/Pack%20my%20Bag/Shared/ContainerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "264">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A68C1F2F-3CA5-45CB-8300-0A7AB523E914"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/ContainerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "performDrop(info:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
