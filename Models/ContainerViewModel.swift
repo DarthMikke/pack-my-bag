@@ -41,7 +41,6 @@ class ContainerViewModel: ObservableObject {
             return
         }
         
-        
         self.model!.name = name
         self.saveContext()
         

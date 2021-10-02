@@ -16,7 +16,7 @@ public class ItemViewModel: ObservableObject {
     
     init(_ item: Item) {
         self.model = item
-        self.name = item.name!
+        self.name = (item.name == "" ? "" : item.name) ?? ""
         self.isPacked = item.isPacked
     }
     
@@ -34,21 +34,26 @@ public class ItemViewModel: ObservableObject {
         self.model.name = self.name
         self.model.isPacked = self.isPacked
         
+        debugprint("Saving changes to the item...")
         self.saveContext()
+        self.isEditing = false
+        debugprint("Saved changes to the item.")
     }
     
     public func remove() {
+        debugprint("Removing item.")
         self.model.managedObjectContext!.delete(self.model)
         self.saveContext()
     }
     
     public func saveContext() {
-        print("Saving changes.")
+        debugprint("Saving changes to the context...", terminator: " ")
         
         let context = model.managedObjectContext!
         
         if context.hasChanges {
             try? context.save()
         }
+        debugprint("OK.", noLead: true)
     }
 }

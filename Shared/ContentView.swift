@@ -15,7 +15,10 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.created, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    @FetchRequest(sortDescriptors: []) private var containers: FetchedResults<Container>
+    @FetchRequest(sortDescriptors: [])
+    private var containers: FetchedResults<Container>
+    @FetchRequest(sortDescriptors: [])
+    private var lists: FetchedResults<PackingList>
     
     @ObservedObject var appModel: AppModel = AppModel()
     @State var selection: String? = nil
@@ -26,35 +29,52 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            #if os(iOS)
-            if UIDevice.current.userInterfaceIdiom == .pad {
-                List {
-                    Text("Vel pakkeliste")
-                    Text("Ny pakkeliste")
-                }
-            } else {
-                Text("Meny")
-            }
-            #elseif os(macOS)
-                List {
-                    Text("Vel pakkeliste")
-                    Text("Ny pakkeliste")
-                }
-            #endif
             List {
-                ForEach(containers, id: \.id) { container in
-                    ContainerView(container)
-                        .onDrop(of: ["public.plain-text"], delegate: ItemDropDelegate(appModel: self.appModel, target: container))
+                ForEach(lists, id: \.id) { list in
+                    NavigationLink(
+                        destination: PackingListView(model: list)
+                            .navigationTitle(list.name ?? "Ukjent liste")
+                            .toolbar {
+                                #if os(iOS)
+                                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                                    Spacer()
+                                    /*NavigationLink(
+                                        destination: NewItemView(),
+                                        tag: AppState.newItem.rawValue,
+                                        selection: self.$appModel.selection) {
+                                        Text("Add item")
+                                    }*/
+                                    Button(action: { self.appModel.newContainer = true }) {
+                                        Text("Add container")
+                                    }
+                                }
+                                #elseif os(macOS)
+                                Spacer()
+                                Button(action: {
+                                    self.appModel.addContainerToView()
+                                }) {
+                                    Image(systemName: "bag.badge.plus")
+                                }
+                                #endif
+                            }
+                            .sheet(
+                                isPresented: $appModel.newContainer,
+                                onDismiss: {
+                                    print("\(#fileID):\(#line): Dismissed")
+                                    self.appModel.newContainer = false
+                                }
+                            ) { NewContainerView() },
+                        tag: list.id!,
+                        selection: self.$appModel.selection
+                    ) {
+                        Text(list.name ?? "Ukjent liste")
+                    }
                 }
-                if self.items.filter({
-                    $0.container == nil
-                }).count > 0 {
-                    ContainerView(
-                        "Manglar beholdar",
-                        items: self.items.filter({$0.container == nil})
-                    )
+                if lists.map({$0}).isEmpty {
+                    Text("Her var det tomt. Legg til ei liste for å begynne.")
                 }
-            }.toolbar {
+            }
+            .toolbar {
                 #if os(iOS)
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Spacer()
@@ -64,28 +84,27 @@ struct ContentView: View {
                         selection: self.$appModel.selection) {
                         Text("Add item")
                     }*/
-                    NavigationLink(
-                        destination: NewContainerView(),
-                        tag: AppState.newContainer.rawValue,
-                        selection: self.$appModel.selection) {
-                        Text("Add container")
+                    Button(action: {
+                        self.appModel.newList = true
+                    }) {
+                        Text("Add list")
                     }
                 }
                 #elseif os(macOS)
                 Spacer()
-                Button(action: {
-                    self.appModel.addContainerToView()
+                Button(action: { //TODO: Ny liste
+                    //self.appModel.addContainerToView()
                 }) {
-                    Image(systemName: "bag.badge.plus")
+                    Image(systemName: "text.badge.plus")
                 }
                 #endif
             }
-            .sheet(
-                isPresented: $appModel.newContainer,
-                onDismiss: {
-                    print("\(#fileID):\(#line): Dismissed")
-                    self.appModel.newContainer = false
-                }) { NewContainerView() }
+            .navigationTitle("Pack my bag")
+            .sheet(isPresented: $appModel.newList) {
+                NewListView()
+            }
+            
+            Label("Vel ei liste i panelet til venstre.", systemImage: "arrow.left")
            /* .iOS {
                 #if os(iOS)
                 $0.navigationBarTitle("Pakkehjelp")
@@ -114,6 +133,7 @@ struct ContentView: View {
     
     ///Migrate to new version of core data storage.
     private func migrate() {
+        //MARK: - Missing attributes in item, container
         var missing = [0, 0, 0] // item timestamps, item ids, container ids.
         for item in items {
             if item.created == nil {
@@ -135,12 +155,46 @@ struct ContentView: View {
         print("\(#fileID):\(#line): \(missing[1]) ting mangla ID.")
         print("\(#fileID):\(#line): \(missing[2]) kontainerar mangla ID.")
         
+        //MARK: - Implementing Packing Lists
+        if lists.map({$0}).isEmpty {
+            let firstList = PackingList(context: viewContext)
+            firstList.name = "My first packing list"
+            firstList.id = UUID()
+            firstList.created = Date()
+        } else {
+            for list in lists {
+                if list.name == nil {
+                    list.name = "Ukjent liste"
+                }
+                if list.id == nil {
+                    list.id = UUID()
+                }
+                if list.created == nil {
+                    list.created = Date()
+                }
+            }
+        }
+        let found = containers.filter({$0.packingList == nil}).count
+        print("\(#fileID):\(#line): Fann \(found) kontainerar utan liste.")
+        if found > 0 {
+            let newList = PackingList(context: viewContext)
+            newList.id = UUID()
+            newList.name = "Funne element"
+            newList.created = Date()
+            var added = 0
+            for container in containers.filter({$0.packingList == nil}) {
+                container.packingList = newList
+                added += 1
+            }
+            print("\(#fileID):\(#line): La til \(added) element til ny liste.")
+        }
+        
         try? viewContext.save()
     }
 
     private func addItem() {
         withAnimation {
-            print("Adding new content")
+            print("\(#fileID):\(#line): Adding new content")
             let newItem = Item(context: viewContext)
             newItem.name = "Item"
             newItem.id = UUID()
