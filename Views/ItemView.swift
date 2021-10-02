@@ -32,12 +32,17 @@ public struct ItemView: View {
             } else {
                 TextField("Kaffikopp", text: self.$viewmodel.name)
                 Spacer()
-                Button("Lagre", action: {
-                    self.viewmodel.saveChanges()
-                })
-                Button("Fjern", action: {
-                    self.viewmodel.remove()
-                }).foregroundColor(.red)
+                Button("Lagre", action: {})
+                    .onTapGesture {
+                        debugprint("Save button pressed.")
+                        self.viewmodel.saveChanges()
+                    }
+                Button("Fjern", action: {})
+                    .onTapGesture {
+                        debugprint("Remove button pressed.")
+                        self.viewmodel.remove()
+                    }
+                    .foregroundColor(.red)
             }
         }
     }
