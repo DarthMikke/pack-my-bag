@@ -25,13 +25,16 @@ public struct NewItemView: View {
                 .disabled(true)
             TextField("Kaffikopp", text: $name)
             Spacer()
-            Button("Lagre", action: {
-                self.save()
-                self.empty()
-            })
-            Button("Avbryt", action: {
-                self.empty()
-            }).foregroundColor(.red)
+            Button("Lagre", action: {})
+                .onTapGesture {
+                    self.save()
+                    self.empty()
+                }
+            Button("Avbryt", action: {})
+                .foregroundColor(.red)
+                .onTapGesture {
+                    self.empty()
+                }
         }
     }
     

@@ -17,18 +17,18 @@ public struct ItemView: View {
                 .accessibility(label: Text("Pakka"))
                 .disabled(viewmodel.isEditing)
             if !viewmodel.isEditing {
-                if self.viewmodel.isPacked {
-                    Text(viewmodel.name).strikethrough()
-                        .onTapGesture {
-                            self.viewmodel.edit()
-                        }
-                } else {
-                    Text(viewmodel.name)
-                        .onTapGesture {
-                            self.viewmodel.edit()
-                        }
+                HStack {
+                    if self.viewmodel.isPacked {
+                        Text(viewmodel.name).strikethrough()
+                    } else {
+                        Text(viewmodel.name)
+                    }
+                    Spacer()
                 }
-                Spacer()
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    self.viewmodel.edit()
+                }
             } else {
                 TextField("Kaffikopp", text: self.$viewmodel.name)
                 Spacer()
