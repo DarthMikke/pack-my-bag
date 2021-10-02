@@ -19,9 +19,17 @@ public struct ItemView: View {
             if !viewmodel.isEditing {
                 HStack {
                     if self.viewmodel.isPacked {
-                        Text(viewmodel.name).strikethrough()
+                        if self.viewmodel.name == "" {
+                            Text("Manglar namn").foregroundColor(.gray).italic().strikethrough()
+                        } else {
+                            Text(viewmodel.name).strikethrough()
+                        }
                     } else {
-                        Text(viewmodel.name)
+                        if self.viewmodel.name == "" {
+                            Text("Manglar namn").foregroundColor(.gray).italic()
+                        } else {
+                            Text(viewmodel.name)
+                        }
                     }
                     Spacer()
                 }

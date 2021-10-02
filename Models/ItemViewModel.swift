@@ -16,7 +16,7 @@ public class ItemViewModel: ObservableObject {
     
     init(_ item: Item) {
         self.model = item
-        self.name = item.name ?? "–"
+        self.name = (item.name == "" ? "" : item.name) ?? ""
         self.isPacked = item.isPacked
     }
     
