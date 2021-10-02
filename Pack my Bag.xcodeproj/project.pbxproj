@@ -55,6 +55,8 @@
 		75E436072707537D009D9B9A /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E436052707537D009D9B9A /* NewListView.swift */; };
 		75E4360927075867009D9B9A /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4360827075867009D9B9A /* ButtonStyles.swift */; };
 		75E4360A27075867009D9B9A /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4360827075867009D9B9A /* ButtonStyles.swift */; };
+		75EB283327089CB3005EB126 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB283227089CB3005EB126 /* functions.swift */; };
+		75EB283427089CB3005EB126 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB283227089CB3005EB126 /* functions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +111,7 @@
 		75AA30F126E4A3D000C6A051 /* PackingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingList.swift; sourceTree = "<group>"; };
 		75E436052707537D009D9B9A /* NewListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
 		75E4360827075867009D9B9A /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		75EB283227089CB3005EB126 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,7 @@
 				750B751A26DE202F0039B9FF /* Persistence.swift */,
 				750B751B26DE20360039B9FF /* Assets.xcassets */,
 				750B751626DE202F0039B9FF /* Pack_my_Bag.xcdatamodeld */,
+				75EB283227089CB3005EB126 /* functions.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -418,6 +422,7 @@
 				750B754226DE20360039B9FF /* Pack_my_Bag.xcdatamodeld in Sources */,
 				750B754826DE20360039B9FF /* Persistence.swift in Sources */,
 				75AA30B526DF9A2700C6A051 /* ContainerViewModel.swift in Sources */,
+				75EB283327089CB3005EB126 /* functions.swift in Sources */,
 				750B757F26DE22020039B9FF /* Container+CoreDataProperties.swift in Sources */,
 				750B754426DE20360039B9FF /* Pack_my_BagApp.swift in Sources */,
 				750B756726DE20B10039B9FF /* NewContainerView.swift in Sources */,
@@ -447,6 +452,7 @@
 				750B754326DE20360039B9FF /* Pack_my_Bag.xcdatamodeld in Sources */,
 				750B754926DE20360039B9FF /* Persistence.swift in Sources */,
 				75AA30B626DF9A2700C6A051 /* ContainerViewModel.swift in Sources */,
+				75EB283427089CB3005EB126 /* functions.swift in Sources */,
 				750B758026DE22020039B9FF /* Container+CoreDataProperties.swift in Sources */,
 				750B754526DE20360039B9FF /* Pack_my_BagApp.swift in Sources */,
 				750B756826DE20B10039B9FF /* NewContainerView.swift in Sources */,
