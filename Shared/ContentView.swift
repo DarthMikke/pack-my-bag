@@ -76,6 +76,11 @@ struct ContentView: View {
             }
             .toolbar {
                 #if os(iOS)
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    NavigationLink(destination: SettingsView()) {
+                        Image(systemName: "gear")
+                    }
+                }
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Spacer()
                     /*NavigationLink(
