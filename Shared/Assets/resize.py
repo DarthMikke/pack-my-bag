@@ -6,7 +6,7 @@ import os
 import PIL
 import glob
 
-FILENAME = "robot-suitcase-no-alpha.png"
+FILENAME = "suitcase-icon.png"
 OUTPUT = "./scaled"
 
 scalesList = [
