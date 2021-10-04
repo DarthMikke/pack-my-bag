@@ -57,6 +57,8 @@
 		75E4360A27075867009D9B9A /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4360827075867009D9B9A /* ButtonStyles.swift */; };
 		75EB283327089CB3005EB126 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB283227089CB3005EB126 /* functions.swift */; };
 		75EB283427089CB3005EB126 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB283227089CB3005EB126 /* functions.swift */; };
+		75EB2836270B133F005EB126 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2835270B133F005EB126 /* SettingsView.swift */; };
+		75EB2837270B133F005EB126 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2835270B133F005EB126 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,7 @@
 		75E436052707537D009D9B9A /* NewListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
 		75E4360827075867009D9B9A /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		75EB283227089CB3005EB126 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
+		75EB2835270B133F005EB126 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +248,7 @@
 				750B755E26DE20B00039B9FF /* ItemView.swift */,
 				750B756126DE20B10039B9FF /* NewItemView.swift */,
 				75E4360827075867009D9B9A /* ButtonStyles.swift */,
+				75EB2835270B133F005EB126 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,6 +429,7 @@
 				75EB283327089CB3005EB126 /* functions.swift in Sources */,
 				750B757F26DE22020039B9FF /* Container+CoreDataProperties.swift in Sources */,
 				750B754426DE20360039B9FF /* Pack_my_BagApp.swift in Sources */,
+				75EB2836270B133F005EB126 /* SettingsView.swift in Sources */,
 				750B756726DE20B10039B9FF /* NewContainerView.swift in Sources */,
 				75AA30DD26E4A37600C6A051 /* PackingList+CoreDataClass.swift in Sources */,
 				75AA30CF26E4A02D00C6A051 /* PackingListView.swift in Sources */,
@@ -455,6 +460,7 @@
 				75EB283427089CB3005EB126 /* functions.swift in Sources */,
 				750B758026DE22020039B9FF /* Container+CoreDataProperties.swift in Sources */,
 				750B754526DE20360039B9FF /* Pack_my_BagApp.swift in Sources */,
+				75EB2837270B133F005EB126 /* SettingsView.swift in Sources */,
 				750B756826DE20B10039B9FF /* NewContainerView.swift in Sources */,
 				75AA30DE26E4A37600C6A051 /* PackingList+CoreDataClass.swift in Sources */,
 				75AA30D026E4A02D00C6A051 /* PackingListView.swift in Sources */,
