@@ -31,3 +31,6 @@
 "Icon by " = "Icon by ";
 "iconFrom" = " from ";
 "Settings" = "Settings";
+"Choose language" = "Choose language";
+"Standard language %@" = "Standard language (%@)";
+"Unknown language" = "Unknown";

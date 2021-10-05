@@ -15,6 +15,15 @@ struct Pack_my_BagApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(
+                    \.locale,
+                     {
+                         let savedLocale = UserDefaults.standard.string(forKey: "language")
+                         if savedLocale == nil || savedLocale == "system" {
+                             return Locale.current
+                         }
+                         return Locale(identifier: savedLocale!)
+                     }())
         }
     }
 }

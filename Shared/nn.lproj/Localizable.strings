@@ -31,3 +31,6 @@
 "Icon by " = "Ikon av ";
 "iconFrom" = " frå ";
 "Settings" = "Innstillingar";
+"Choose language" = "Vel språk";
+"Standard language %@" = "Standard (%@)";
+"Unknown language" = "Ukjent";

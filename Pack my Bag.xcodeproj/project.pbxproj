@@ -61,6 +61,8 @@
 		75EB2837270B133F005EB126 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2835270B133F005EB126 /* SettingsView.swift */; };
 		75EB2844270B2880005EB126 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75EB2847270B2880005EB126 /* Localizable.strings */; };
 		75EB2845270B2880005EB126 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75EB2847270B2880005EB126 /* Localizable.strings */; };
+		75EB284C270C6697005EB126 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB284B270C6696005EB126 /* AppLanguage.swift */; };
+		75EB284D270C6697005EB126 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB284B270C6696005EB126 /* AppLanguage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,7 @@
 		75EB2846270B2880005EB126 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		75EB2848270B2910005EB126 /* nn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nn; path = nn.lproj/Localizable.strings; sourceTree = "<group>"; };
 		75EB284A270B2FFC005EB126 /* nn-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nn-NO"; path = "nn-NO.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		75EB284B270C6696005EB126 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,7 @@
 				750B751626DE202F0039B9FF /* Pack_my_Bag.xcdatamodeld */,
 				75EB283227089CB3005EB126 /* functions.swift */,
 				75EB2847270B2880005EB126 /* Localizable.strings */,
+				75EB284B270C6696005EB126 /* AppLanguage.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -404,7 +408,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EB283A270B26B4005EB126 /* en.xcloc in Resources */,
 				750B754A26DE20360039B9FF /* Assets.xcassets in Resources */,
 				75EB2844270B2880005EB126 /* Localizable.strings in Resources */,
 			);
@@ -414,7 +417,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75EB283B270B26B4005EB126 /* en.xcloc in Resources */,
 				750B754B26DE20360039B9FF /* Assets.xcassets in Resources */,
 				75EB2845270B2880005EB126 /* Localizable.strings in Resources */,
 			);
@@ -463,6 +465,7 @@
 				75AA30AE26DF99DE00C6A051 /* ContainerView.swift in Sources */,
 				750B758F26DE246B0039B9FF /* Container.swift in Sources */,
 				75AA30F226E4A3D000C6A051 /* PackingList.swift in Sources */,
+				75EB284C270C6697005EB126 /* AppLanguage.swift in Sources */,
 				750B754626DE20360039B9FF /* ContentView.swift in Sources */,
 				750B757D26DE22020039B9FF /* Container+CoreDataClass.swift in Sources */,
 			);
@@ -494,6 +497,7 @@
 				75AA30AF26DF99DE00C6A051 /* ContainerView.swift in Sources */,
 				750B759026DE246B0039B9FF /* Container.swift in Sources */,
 				75AA30F326E4A3D000C6A051 /* PackingList.swift in Sources */,
+				75EB284D270C6697005EB126 /* AppLanguage.swift in Sources */,
 				750B754726DE20360039B9FF /* ContentView.swift in Sources */,
 				750B757E26DE22020039B9FF /* Container+CoreDataClass.swift in Sources */,
 			);
