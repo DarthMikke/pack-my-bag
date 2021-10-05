@@ -8,7 +8,7 @@
 import Foundation
 
 public enum AppLanguage: String, CaseIterable, Identifiable {
-    case system, en, nn
+    case system, en, nn, nb
     
     public var id: String { self.rawValue }
     public var long: String {
