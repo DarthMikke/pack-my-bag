@@ -92,7 +92,7 @@ struct ContentView: View {
                     Button(action: {
                         self.appModel.newList = true
                     }) {
-                        Text("Add list")
+                        Text(NSLocalizedString("addList", comment: ""))
                     }
                 }
                 #elseif os(macOS)
@@ -104,12 +104,12 @@ struct ContentView: View {
                 }
                 #endif
             }
-            .navigationTitle("Pack my bag")
+            .navigationTitle(NSLocalizedString("appTitle", comment: ""))
             .sheet(isPresented: $appModel.newList) {
                 NewListView()
             }
             
-            Label("Vel ei liste i panelet til venstre.", systemImage: "arrow.left")
+            Label(LocalizedStringKey("chooseList"), systemImage: "arrow.left")
            /* .iOS {
                 #if os(iOS)
                 $0.navigationBarTitle("Pakkehjelp")
@@ -169,7 +169,7 @@ struct ContentView: View {
         } else {
             for list in lists {
                 if list.name == nil {
-                    list.name = "Ukjent liste"
+                    list.name = NSLocalizedString("Unknown list", comment: "")
                 }
                 if list.id == nil {
                     list.id = UUID()
@@ -184,7 +184,7 @@ struct ContentView: View {
         if found > 0 {
             let newList = PackingList(context: viewContext)
             newList.id = UUID()
-            newList.name = "Funne element"
+            newList.name = NSLocalizedString("foundItems", comment: "")
             newList.created = Date()
             var added = 0
             for container in containers.filter({$0.packingList == nil}) {

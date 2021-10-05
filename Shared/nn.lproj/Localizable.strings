@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  Pack my Bag
+
+  Created by Michal Jan Warecki on 04/10/2021.
+  
+*/
+
+"chooseList" = "Vel ei liste i panelet til venstre.";
+"Add container" = "Ny seksjon";
+"Add item" = "Ny ting";
+"addList" = "Ny liste";
+"Unknown list" = "Ukjent liste";
+"Found items" = "Funne element";
+"appTitle" = "Pack my bag";
+"Give name to list" = "Gje namn til ny liste";
+"New list" = "Ny liste";
+"List name" = "Namn";
+"Save" = "Lagre";
+"Add storage" = "Ny oppbevaring";
+"Name" = "Namn";
+"Remove" = "Fjern";
+"Give name to new storage" = "Gje namn til ny oppbevaring";
+"New storage" = "Ny oppbevaring";
+"Missing name" = "Manglar namn";
+"Packed" = "Pakka";
+"Coffe mug" = "Kaffikopp";
+"Advanced" = "Avansert";
+"Remove all items" = "Nullstill oppføringar";
+"Credits" = "Anerkjenningar";
+"Icon by " = "Ikon av ";
+"iconFrom" = " frå ";
+"Settings" = "Innstillingar";

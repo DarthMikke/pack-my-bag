@@ -10,24 +10,24 @@ import SwiftUI
 struct SettingsView: View {
     var body: some View {
         List {
-            Section(header: Text("Avansert")) {
+            Section(header: Text("Advanced")) {
                 HStack {
                     Button(action: {}) {
-                        Text("Nullstill oppføringar")
+                        Text("Remove all items")
                     }.foregroundColor(.red)
                 }
             }
             Section(
-                header: Text("Anerkjenningar")
+                header: Text("Credits")
             ) {
                 HStack(spacing: 0) {
                     Text("Icon by ")
                     Link("Freepik", destination: URL(string: "https://www.freepik.com")!)
-                    Text(" from ")
+                    Text("iconFrom")
                     Link("www.flaticon.com", destination: URL(string: "https://www.flaticon.com/")!)
                 }
             }
-        }.navigationTitle("Innstillingar")
+        }.navigationTitle("Settings")
     }
 }
 

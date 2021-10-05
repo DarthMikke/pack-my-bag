@@ -1,0 +1,33 @@
+/* 
+  Localizable.strings
+  Pack my Bag
+
+  Created by Michal Jan Warecki on 04/10/2021.
+  
+*/
+
+"chooseList" = "Choose a list in the panel to the left.";
+"Add container" = "Add container";
+"Add item" = "Add item";
+"addList" = "Add list";
+"Unknown list" = "Unknown list";
+"foundItems" = "Found items";
+"appTitle" = "Pack my bag";
+"Give name to list" = "Give name to list";
+"New list" = "New list";
+"List name" = "Name";
+"Save" = "Save";
+"Add storage" = "Add storage";
+"Name" = "Name";
+"Remove" = "Remove";
+"Give name to new storage" = "Give name to new storage";
+"New storage" = "New storage";
+"Missing name" = "Missing name";
+"Packed" = "Packed";
+"Coffe mug" = "Coffe mug";
+"Advanced" = "Advanced";
+"Remove all items" = "Remove all items";
+"Credits" = "Credits";
+"Icon by " = "Icon by ";
+"iconFrom" = " from ";
+"Settings" = "Settings";
