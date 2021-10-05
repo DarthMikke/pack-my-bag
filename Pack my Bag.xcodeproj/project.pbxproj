@@ -126,12 +126,12 @@
 		75EB2839270B26B4005EB126 /* en.xcloc */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = en.xcloc; sourceTree = "<group>"; };
 		75EB2846270B2880005EB126 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		75EB2848270B2910005EB126 /* nn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nn; path = nn.lproj/Localizable.strings; sourceTree = "<group>"; };
-		75EB284A270B2FFC005EB126 /* nn-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nn-NO"; path = "nn-NO.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		75EB284B270C6696005EB126 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
 		75EB284E270C75A8005EB126 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		75EB2851270C8C2B005EB126 /* Pack my Bag (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pack my Bag (iOS).entitlements"; sourceTree = "<group>"; };
 		75EB2853270C8C2F005EB126 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		75EB2855270C8C62005EB126 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		75EB2857270C8E70005EB126 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,7 +410,7 @@
 			knownRegions = (
 				en,
 				nn,
-				"nn-NO",
+				nb,
 			);
 			mainGroup = 750B751026DE202E0039B9FF;
 			productRefGroup = 750B752126DE20360039B9FF /* Products */;
@@ -564,7 +564,7 @@
 			children = (
 				75EB2846270B2880005EB126 /* en */,
 				75EB2848270B2910005EB126 /* nn */,
-				75EB284A270B2FFC005EB126 /* nn-NO */,
+				75EB2857270C8E70005EB126 /* nb */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
