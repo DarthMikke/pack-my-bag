@@ -63,6 +63,8 @@
 		75EB2845270B2880005EB126 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75EB2847270B2880005EB126 /* Localizable.strings */; };
 		75EB284C270C6697005EB126 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB284B270C6696005EB126 /* AppLanguage.swift */; };
 		75EB284D270C6697005EB126 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB284B270C6696005EB126 /* AppLanguage.swift */; };
+		75EB284F270C75A8005EB126 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB284E270C75A8005EB126 /* MainView.swift */; };
+		75EB2850270C75A8005EB126 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB284E270C75A8005EB126 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,7 @@
 		75EB2848270B2910005EB126 /* nn */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nn; path = nn.lproj/Localizable.strings; sourceTree = "<group>"; };
 		75EB284A270B2FFC005EB126 /* nn-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nn-NO"; path = "nn-NO.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		75EB284B270C6696005EB126 /* AppLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLanguage.swift; sourceTree = "<group>"; };
+		75EB284E270C75A8005EB126 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +264,7 @@
 				750B756126DE20B10039B9FF /* NewItemView.swift */,
 				75E4360827075867009D9B9A /* ButtonStyles.swift */,
 				75EB2835270B133F005EB126 /* SettingsView.swift */,
+				75EB284E270C75A8005EB126 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -444,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75AA309726DF91CD00C6A051 /* ItemViewModel.swift in Sources */,
+				75EB284F270C75A8005EB126 /* MainView.swift in Sources */,
 				750B757926DE22020039B9FF /* Item+CoreDataClass.swift in Sources */,
 				750B756926DE20B10039B9FF /* NewItemView.swift in Sources */,
 				750B754226DE20360039B9FF /* Pack_my_Bag.xcdatamodeld in Sources */,
@@ -476,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75AA309826DF91CD00C6A051 /* ItemViewModel.swift in Sources */,
+				75EB2850270C75A8005EB126 /* MainView.swift in Sources */,
 				750B757A26DE22020039B9FF /* Item+CoreDataClass.swift in Sources */,
 				750B756A26DE20B10039B9FF /* NewItemView.swift in Sources */,
 				750B754326DE20360039B9FF /* Pack_my_Bag.xcdatamodeld in Sources */,

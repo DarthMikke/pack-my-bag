@@ -129,6 +129,15 @@ struct ContentView: View {
             self.appModel.moc = viewContext
             self.migrate()
         }
+        .environment(
+            \.locale,
+             {
+                 let savedLocale = self.appModel.selectedLanguage
+                 if savedLocale == .system {
+                     return Locale.current
+                 }
+                 return Locale(identifier: savedLocale.short)
+             }())
         .environmentObject(self.appModel)
     }
     
