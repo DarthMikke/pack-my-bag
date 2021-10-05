@@ -28,12 +28,12 @@ public struct NewListView: View {
                 }
                 .buttonStyle(CustomLinkButtonStyle())
             }
-            Text(NSLocalizedString("Give name to list", comment: "")).font(.headline)
+            Text(LocalizedStringKey("Give name to list")).font(.headline)
             Form {
-                Section(header: Text(NSLocalizedString("New list", comment: ""))) {
-                    TextField(NSLocalizedString("List name", comment: ""), text: self.$newList)
+                Section(header: Text(LocalizedStringKey("New list"))) {
+                    TextField(LocalizedStringKey("List name"), text: self.$newList)
                     Button(action: self.addList) {
-                        Text("Save")
+                        Text(LocalizedStringKey("Save"))
                     }
                     .buttonStyle(CustomLinkButtonStyle())
                     //.disabled(self.cannotSave)
