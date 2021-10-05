@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Pack my Bag
+
+  Created by Michal Jan Warecki on 04/10/2021.
+  
+*/
+
+"chooseList" = "Choose a list in the panel to the left.";
+"Add container" = "Add container";
+"Add item" = "Add item";
+"addList" = "Add list";

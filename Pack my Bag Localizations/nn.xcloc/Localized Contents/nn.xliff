@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="iOS/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="nn">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Pack my Bag</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="Localization/en.lproj/Localizable.strings" source-language="en" target-language="nn" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+    </header>
+    <body>
+      <trans-unit id=" from " xml:space="preserve">
+        <source> from </source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add container" xml:space="preserve">
+        <source>Add container</source>
+        <target>Ny seksjon</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Add item" xml:space="preserve">
+        <source>Add item</source>
+        <target>Ny ting</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="Anerkjenningar" xml:space="preserve">
+        <source>Anerkjenningar</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Avansert" xml:space="preserve">
+        <source>Avansert</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Gje namn til ny liste" xml:space="preserve">
+        <source>Gje namn til ny liste</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Gje namn til ny seksjon" xml:space="preserve">
+        <source>Gje namn til ny seksjon</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Her var det tomt. Legg til ei liste for å begynne." xml:space="preserve">
+        <source>Her var det tomt. Legg til ei liste for å begynne.</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Icon by " xml:space="preserve">
+        <source>Icon by </source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Lagre" xml:space="preserve">
+        <source>Lagre</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Manglar namn" xml:space="preserve">
+        <source>Manglar namn</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Nullstill oppføringar" xml:space="preserve">
+        <source>Nullstill oppføringar</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ny liste" xml:space="preserve">
+        <source>Ny liste</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ny oppbevaring" xml:space="preserve">
+        <source>Ny oppbevaring</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ny seksjon" xml:space="preserve">
+        <source>Ny seksjon</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Pakka" xml:space="preserve">
+        <source>Pakka</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ukjent liste" xml:space="preserve">
+        <source>Ukjent liste</source>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="addList" xml:space="preserve">
+        <source>Add list</source>
+        <target>Ny liste</target>
+        <note/>
+      </trans-unit>
+      <trans-unit id="chooseList" xml:space="preserve">
+        <source>Choose a list in the panel to the left.</source>
+        <target>Vel ei liste i panelet til venstre.</target>
+        <note>Localizable.strings
+  Pack my Bag
+
+  Created by Michal Jan Warecki on 04/10/2021.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="macOS/en.lproj/InfoPlist.strings" datatype="plaintext" source-language="en" target-language="nn">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Pack my Bag</source>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

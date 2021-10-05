@@ -59,8 +59,6 @@
 		75EB283427089CB3005EB126 /* functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB283227089CB3005EB126 /* functions.swift */; };
 		75EB2836270B133F005EB126 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2835270B133F005EB126 /* SettingsView.swift */; };
 		75EB2837270B133F005EB126 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2835270B133F005EB126 /* SettingsView.swift */; };
-		75EB283A270B26B4005EB126 /* en.xcloc in Resources */ = {isa = PBXBuildFile; fileRef = 75EB2839270B26B4005EB126 /* en.xcloc */; };
-		75EB283B270B26B4005EB126 /* en.xcloc in Resources */ = {isa = PBXBuildFile; fileRef = 75EB2839270B26B4005EB126 /* en.xcloc */; };
 		75EB2844270B2880005EB126 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75EB2847270B2880005EB126 /* Localizable.strings */; };
 		75EB2845270B2880005EB126 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 75EB2847270B2880005EB126 /* Localizable.strings */; };
 /* End PBXBuildFile section */
@@ -385,7 +383,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				nn,
 				"nn-NO",
 			);

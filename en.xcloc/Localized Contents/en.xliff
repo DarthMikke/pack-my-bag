@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="iOS/en.lproj/InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Pack my Bag</source>
+        <target>Pack my Bag</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="iOS/en.lproj/Localizable.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+    </header>
+    <body>
+      <trans-unit id=" from " xml:space="preserve">
+        <source> from </source>
+        <target> from </target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add container" xml:space="preserve">
+        <source>Add container</source>
+        <target>Add container</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add item" xml:space="preserve">
+        <source>Add item</source>
+        <target>Add item</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add list" xml:space="preserve">
+        <source>Add list</source>
+        <target>Add list</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Anerkjenningar" xml:space="preserve">
+        <source>Anerkjenningar</source>
+        <target>Anerkjenningar</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Avansert" xml:space="preserve">
+        <source>Avansert</source>
+        <target>Avansert</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Gje namn til ny liste" xml:space="preserve">
+        <source>Gje namn til ny liste</source>
+        <target>Gje namn til ny liste</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Gje namn til ny seksjon" xml:space="preserve">
+        <source>Gje namn til ny seksjon</source>
+        <target>Gje namn til ny seksjon</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Her var det tomt. Legg til ei liste for å begynne." xml:space="preserve">
+        <source>Her var det tomt. Legg til ei liste for å begynne.</source>
+        <target>Her var det tomt. Legg til ei liste for å begynne.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Icon by " xml:space="preserve">
+        <source>Icon by </source>
+        <target>Icon by </target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Lagre" xml:space="preserve">
+        <source>Lagre</source>
+        <target>Lagre</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Manglar namn" xml:space="preserve">
+        <source>Manglar namn</source>
+        <target>Manglar namn</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Nullstill oppføringar" xml:space="preserve">
+        <source>Nullstill oppføringar</source>
+        <target>Nullstill oppføringar</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ny liste" xml:space="preserve">
+        <source>Ny liste</source>
+        <target>Ny liste</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ny oppbevaring" xml:space="preserve">
+        <source>Ny oppbevaring</source>
+        <target>Ny oppbevaring</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ny seksjon" xml:space="preserve">
+        <source>Ny seksjon</source>
+        <target>Ny seksjon</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Pakka" xml:space="preserve">
+        <source>Pakka</source>
+        <target>Pakka</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ukjent liste" xml:space="preserve">
+        <source>Ukjent liste</source>
+        <target>Ukjent liste</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="macOS/en.lproj/InfoPlist.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName" xml:space="preserve">
+        <source>Pack my Bag</source>
+        <target>Pack my Bag</target>
+        <note>Bundle name</note>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="macOS/en.lproj/Localizable.strings" source-language="en" target-language="en" datatype="plaintext">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="13.0" build-num="13A233"/>
+    </header>
+    <body>
+      <trans-unit id=" from " xml:space="preserve">
+        <source> from </source>
+        <target> from </target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add container" xml:space="preserve">
+        <source>Add container</source>
+        <target>Add container</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add item" xml:space="preserve">
+        <source>Add item</source>
+        <target>Add item</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Add list" xml:space="preserve">
+        <source>Add list</source>
+        <target>Add list</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Anerkjenningar" xml:space="preserve">
+        <source>Anerkjenningar</source>
+        <target>Anerkjenningar</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Avansert" xml:space="preserve">
+        <source>Avansert</source>
+        <target>Avansert</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Gje namn til ny liste" xml:space="preserve">
+        <source>Gje namn til ny liste</source>
+        <target>Gje namn til ny liste</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Gje namn til ny seksjon" xml:space="preserve">
+        <source>Gje namn til ny seksjon</source>
+        <target>Gje namn til ny seksjon</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Her var det tomt. Legg til ei liste for å begynne." xml:space="preserve">
+        <source>Her var det tomt. Legg til ei liste for å begynne.</source>
+        <target>Her var det tomt. Legg til ei liste for å begynne.</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Icon by " xml:space="preserve">
+        <source>Icon by </source>
+        <target>Icon by </target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Lagre" xml:space="preserve">
+        <source>Lagre</source>
+        <target>Lagre</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Manglar namn" xml:space="preserve">
+        <source>Manglar namn</source>
+        <target>Manglar namn</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Nullstill oppføringar" xml:space="preserve">
+        <source>Nullstill oppføringar</source>
+        <target>Nullstill oppføringar</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ny liste" xml:space="preserve">
+        <source>Ny liste</source>
+        <target>Ny liste</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ny oppbevaring" xml:space="preserve">
+        <source>Ny oppbevaring</source>
+        <target>Ny oppbevaring</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ny seksjon" xml:space="preserve">
+        <source>Ny seksjon</source>
+        <target>Ny seksjon</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Pakka" xml:space="preserve">
+        <source>Pakka</source>
+        <target>Pakka</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+      <trans-unit id="Ukjent liste" xml:space="preserve">
+        <source>Ukjent liste</source>
+        <target>Ukjent liste</target>
+        <note>No comment provided by engineer.</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
