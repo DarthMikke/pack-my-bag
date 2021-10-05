@@ -14,19 +14,19 @@ public struct ItemView: View {
         HStack {
             Toggle("", isOn: $viewmodel.isPacked)
                 .toggleStyle(CustomToggleStyle())
-                .accessibility(label: Text("Pakka"))
+                .accessibility(label: Text("Packed"))
                 .disabled(viewmodel.isEditing)
             if !viewmodel.isEditing {
                 HStack {
                     if self.viewmodel.isPacked {
                         if self.viewmodel.name == "" {
-                            Text("Manglar namn").foregroundColor(.gray).italic().strikethrough()
+                            Text("Missing name").foregroundColor(.gray).italic().strikethrough()
                         } else {
                             Text(viewmodel.name).strikethrough()
                         }
                     } else {
                         if self.viewmodel.name == "" {
-                            Text("Manglar namn").foregroundColor(.gray).italic()
+                            Text("Missing name").foregroundColor(.gray).italic()
                         } else {
                             Text(viewmodel.name)
                         }
@@ -38,14 +38,14 @@ public struct ItemView: View {
                     self.viewmodel.edit()
                 }
             } else {
-                TextField("Kaffikopp", text: self.$viewmodel.name)
+                TextField("Coffe mug", text: self.$viewmodel.name)
                 Spacer()
-                Button("Lagre", action: {})
+                Button("Save", action: {})
                     .onTapGesture {
                         debugprint("Save button pressed.")
                         self.viewmodel.saveChanges()
                     }
-                Button("Fjern", action: {})
+                Button("Remove", action: {})
                     .onTapGesture {
                         debugprint("Remove button pressed.")
                         self.viewmodel.remove()

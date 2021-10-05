@@ -10,7 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.created, ascending: true)],
         animation: .default)
@@ -28,107 +28,20 @@ struct ContentView: View {
     }
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(lists, id: \.id) { list in
-                    NavigationLink(
-                        destination: PackingListView(model: list)
-                            .navigationTitle(list.name ?? "Ukjent liste")
-                            .toolbar {
-                                #if os(iOS)
-                                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                                    Spacer()
-                                    /*NavigationLink(
-                                        destination: NewItemView(),
-                                        tag: AppState.newItem.rawValue,
-                                        selection: self.$appModel.selection) {
-                                        Text("Add item")
-                                    }*/
-                                    Button(action: { self.appModel.newContainer = true }) {
-                                        Text("Add container")
-                                    }
-                                }
-                                #elseif os(macOS)
-                                Spacer()
-                                Button(action: {
-                                    self.appModel.addContainerToView()
-                                }) {
-                                    Image(systemName: "bag.badge.plus")
-                                }
-                                #endif
-                            }
-                            .sheet(
-                                isPresented: $appModel.newContainer,
-                                onDismiss: {
-                                    print("\(#fileID):\(#line): Dismissed")
-                                    self.appModel.newContainer = false
-                                }
-                            ) { NewContainerView() },
-                        tag: list.id!,
-                        selection: self.$appModel.selection
-                    ) {
-                        Text(list.name ?? "Ukjent liste")
-                    }
-                }
-                if lists.map({$0}).isEmpty {
-                    Text("Her var det tomt. Legg til ei liste for å begynne.")
-                }
-            }
-            .toolbar {
-                #if os(iOS)
-                ToolbarItemGroup(placement: .navigationBarLeading) {
-                    NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "gear")
-                    }
-                }
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Spacer()
-                    /*NavigationLink(
-                        destination: NewItemView(),
-                        tag: AppState.newItem.rawValue,
-                        selection: self.$appModel.selection) {
-                        Text("Add item")
-                    }*/
-                    Button(action: {
-                        self.appModel.newList = true
-                    }) {
-                        Text("Add list")
-                    }
-                }
-                #elseif os(macOS)
-                Spacer()
-                Button(action: { //TODO: Ny liste
-                    //self.appModel.addContainerToView()
-                }) {
-                    Image(systemName: "text.badge.plus")
-                }
-                #endif
-            }
-            .navigationTitle("Pack my bag")
-            .sheet(isPresented: $appModel.newList) {
-                NewListView()
-            }
-            
-            Label("Vel ei liste i panelet til venstre.", systemImage: "arrow.left")
-           /* .iOS {
-                #if os(iOS)
-                $0.navigationBarTitle("Pakkehjelp")
-                #else
-                $0
-                #endif
-            }
-            .iOS {
-                #if os(iOS)
-                $0.navigationBarTitleDisplayMode(.large)
-                #else
-                $0
-                #endif
-            }*/
-        }
+        MainView()
         .onAppear {
             self.appModel.moc = viewContext
             self.migrate()
         }
+        .environment(
+            \.locale,
+             {
+                 let savedLocale = self.appModel.selectedLanguage
+                 if savedLocale == .system {
+                     return Locale.current
+                 }
+                 return Locale(identifier: savedLocale.short)
+             }())
         .environmentObject(self.appModel)
     }
     
@@ -169,7 +82,7 @@ struct ContentView: View {
         } else {
             for list in lists {
                 if list.name == nil {
-                    list.name = "Ukjent liste"
+                    list.name = NSLocalizedString("Unknown list", comment: "")
                 }
                 if list.id == nil {
                     list.id = UUID()
@@ -184,7 +97,7 @@ struct ContentView: View {
         if found > 0 {
             let newList = PackingList(context: viewContext)
             newList.id = UUID()
-            newList.name = "Funne element"
+            newList.name = NSLocalizedString("foundItems", comment: "")
             newList.created = Date()
             var added = 0
             for container in containers.filter({$0.packingList == nil}) {

@@ -6,33 +6,54 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SettingsView: View {
+    //@EnvironmentObject var appModel: AppModel
+    @StateObject var appModel: AppModel
+    var cancellable: AnyCancellable?
+    
+    init(_ appModel: AppModel) {
+        self._appModel = StateObject(wrappedValue: appModel)
+        #if DEBUG
+        cancellable = self.appModel.$selectedLanguage.receive(on: DispatchQueue.main).sink {
+            debugprint("Set språk til \($0).")
+            UserDefaults.standard.set($0.short, forKey: "language")
+        }
+        #endif
+    }
+    
     var body: some View {
         List {
-            Section(header: Text("Avansert")) {
+            Section {
+                Picker(LocalizedStringKey("Choose language"), selection: self.$appModel.selectedLanguage) {
+                    ForEach(AppLanguage.allCases) { language in
+                        Text(language.long).tag(language)
+                    }
+                }
+                .onChange(of: self.appModel.selectedLanguage) {debugprint($0)}
                 HStack {
                     Button(action: {}) {
-                        Text("Nullstill oppføringar")
+                        Text("Remove all items")
                     }.foregroundColor(.red)
                 }
             }
             Section(
-                header: Text("Anerkjenningar")
+                header: Text("Credits")
             ) {
                 HStack(spacing: 0) {
                     Text("Icon by ")
                     Link("Freepik", destination: URL(string: "https://www.freepik.com")!)
-                    Text(" from ")
+                    Text("iconFrom")
                     Link("www.flaticon.com", destination: URL(string: "https://www.flaticon.com/")!)
                 }
             }
-        }.navigationTitle("Innstillingar")
+        }.navigationTitle("Settings")
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(AppModel())
     }
 }

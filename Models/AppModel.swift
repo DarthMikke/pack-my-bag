@@ -12,11 +12,12 @@ public class AppModel: ObservableObject {/*
     @Published public var selection: UUID? = nil
     @Published public var newContainer: Bool = false
     @Published public var newList: Bool = false
+    @Published public var selectedLanguage: AppLanguage = AppLanguage(rawValue: UserDefaults.standard.string(forKey: "language") ?? "system") ?? AppLanguage.system
     public var draggedItem: Item? = nil
     public var moc: NSManagedObjectContext? = nil
     
     public init() {
-        return
+        self.firstRun()
     }
     
     public init(moc: NSManagedObjectContext) {
@@ -24,6 +25,17 @@ public class AppModel: ObservableObject {/*
         /*items = []
         containers = [Container(name: "Container 1")]*/
         return
+    }
+    
+    public func firstRun() {
+        if UserDefaults.standard.bool(forKey: "hasBeenRun") {
+            debugprint("Appen har vorte køyrt før.")
+            return
+        }
+        
+        debugprint("Første køyring. Set opp appen...")
+        UserDefaults.standard.set("system", forKey: "language")
+        UserDefaults.standard.set(true, forKey: "hasBeenRun")
     }
     
     public func drag(item: Item) {

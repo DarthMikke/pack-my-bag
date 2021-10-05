@@ -21,16 +21,16 @@ public struct NewItemView: View {
         HStack {
             Toggle("", isOn: $isPacked)
                 .toggleStyle(CustomToggleStyle())
-                .accessibility(label: Text("Pakka"))
+                .accessibility(label: Text("Packed"))
                 .disabled(true)
-            TextField("Kaffikopp", text: $name)
+            TextField("Coffe mug", text: $name)
             Spacer()
-            Button("Lagre", action: {})
+            Button("Save", action: {})
                 .onTapGesture {
                     self.save()
                     self.empty()
                 }
-            Button("Avbryt", action: {})
+            Button("Remove", action: {})
                 .foregroundColor(.red)
                 .onTapGesture {
                     self.empty()

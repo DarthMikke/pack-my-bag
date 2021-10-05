@@ -27,12 +27,12 @@ public struct NewContainerView: View {
                 }
                 .buttonStyle(CustomLinkButtonStyle())
             }
-            Text("Gje namn til ny seksjon").font(.headline)
+            Text(LocalizedStringKey("Give name to new storage")).font(.headline)
             Form {
-                Section(header: Text("Ny seksjon")) {
-                    TextField("Namn", text: self.$newContainerName)
+                Section(header: Text("New storage")) {
+                    TextField(LocalizedStringKey("Name"), text: self.$newContainerName)
                     Button(action: self.addContainer) {
-                        Text("Lagre")
+                        Text("Save")
                     }
                     .buttonStyle(CustomLinkButtonStyle())
                     //.disabled(self.cannotSave)

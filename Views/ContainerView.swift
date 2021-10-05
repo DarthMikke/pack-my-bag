@@ -83,11 +83,13 @@ struct ContainerView: View {
                     .buttonStyle(CustomLinkButtonStyle())
                 }
                 Form {
-                    Section(header: Text("Ny oppbevaring")) {
-                        TextField("Namn", text: self.$viewmodel.name)
+                    Section(
+                        header: Text(LocalizedStringKey("Add storage"))
+                    ) {
+                        TextField("Name", text: self.$viewmodel.name)
                         HStack {
                             Button(action: self.viewmodel.saveChanges) {
-                                Text("Lagre")
+                                Text(LocalizedStringKey("Save"))
                                     .foregroundColor(
                                         self.viewmodel.name == ""
                                             ? .black
@@ -97,7 +99,7 @@ struct ContainerView: View {
                             .disabled(self.viewmodel.name == "")
                             Spacer()
                             Button(action: self.viewmodel.remove) {
-                                Label("Fjern", systemImage: "bin.xmark")
+                                Label(LocalizedStringKey("Remove"), systemImage: "bin.xmark")
                                     .foregroundColor(.red)
                             }
                         }
