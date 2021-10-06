@@ -67,6 +67,12 @@
 		75EB2850270C75A8005EB126 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB284E270C75A8005EB126 /* MainView.swift */; };
 		75EB2854270C8C2F005EB126 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB2853270C8C2F005EB126 /* CloudKit.framework */; };
 		75EB2856270C8C62005EB126 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EB2855270C8C62005EB126 /* CloudKit.framework */; };
+		75EB2859270DA576005EB126 /* MockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2858270DA575005EB126 /* MockItem.swift */; };
+		75EB285A270DA576005EB126 /* MockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2858270DA575005EB126 /* MockItem.swift */; };
+		75EB285C270DA582005EB126 /* MockContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB285B270DA582005EB126 /* MockContainer.swift */; };
+		75EB285D270DA582005EB126 /* MockContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB285B270DA582005EB126 /* MockContainer.swift */; };
+		75EB285F270DA58C005EB126 /* MockPackingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB285E270DA58C005EB126 /* MockPackingList.swift */; };
+		75EB2860270DA58C005EB126 /* MockPackingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB285E270DA58C005EB126 /* MockPackingList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +138,9 @@
 		75EB2853270C8C2F005EB126 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		75EB2855270C8C62005EB126 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		75EB2857270C8E70005EB126 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
+		75EB2858270DA575005EB126 /* MockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItem.swift; sourceTree = "<group>"; };
+		75EB285B270DA582005EB126 /* MockContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContainer.swift; sourceTree = "<group>"; };
+		75EB285E270DA58C005EB126 /* MockPackingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPackingList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +293,9 @@
 				750B755F26DE20B00039B9FF /* AppModel.swift */,
 				75AA309626DF91CD00C6A051 /* ItemViewModel.swift */,
 				75AA30B426DF9A2700C6A051 /* ContainerViewModel.swift */,
+				75EB2858270DA575005EB126 /* MockItem.swift */,
+				75EB285B270DA582005EB126 /* MockContainer.swift */,
+				75EB285E270DA58C005EB126 /* MockPackingList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -468,6 +480,7 @@
 				75AA309726DF91CD00C6A051 /* ItemViewModel.swift in Sources */,
 				75EB284F270C75A8005EB126 /* MainView.swift in Sources */,
 				750B757926DE22020039B9FF /* Item+CoreDataClass.swift in Sources */,
+				75EB2859270DA576005EB126 /* MockItem.swift in Sources */,
 				750B756926DE20B10039B9FF /* NewItemView.swift in Sources */,
 				750B754226DE20360039B9FF /* Pack_my_Bag.xcdatamodeld in Sources */,
 				750B754826DE20360039B9FF /* Persistence.swift in Sources */,
@@ -479,9 +492,11 @@
 				750B756726DE20B10039B9FF /* NewContainerView.swift in Sources */,
 				75AA30DD26E4A37600C6A051 /* PackingList+CoreDataClass.swift in Sources */,
 				75AA30CF26E4A02D00C6A051 /* PackingListView.swift in Sources */,
+				75EB285C270DA582005EB126 /* MockContainer.swift in Sources */,
 				75E4360927075867009D9B9A /* ButtonStyles.swift in Sources */,
 				750B756526DE20B10039B9FF /* AppModel.swift in Sources */,
 				750B756326DE20B10039B9FF /* ItemView.swift in Sources */,
+				75EB285F270DA58C005EB126 /* MockPackingList.swift in Sources */,
 				75E436062707537D009D9B9A /* NewListView.swift in Sources */,
 				75AA30DF26E4A37600C6A051 /* PackingList+CoreDataProperties.swift in Sources */,
 				750B757B26DE22020039B9FF /* Item+CoreDataProperties.swift in Sources */,
@@ -501,6 +516,7 @@
 				75AA309826DF91CD00C6A051 /* ItemViewModel.swift in Sources */,
 				75EB2850270C75A8005EB126 /* MainView.swift in Sources */,
 				750B757A26DE22020039B9FF /* Item+CoreDataClass.swift in Sources */,
+				75EB285A270DA576005EB126 /* MockItem.swift in Sources */,
 				750B756A26DE20B10039B9FF /* NewItemView.swift in Sources */,
 				750B754326DE20360039B9FF /* Pack_my_Bag.xcdatamodeld in Sources */,
 				750B754926DE20360039B9FF /* Persistence.swift in Sources */,
@@ -512,9 +528,11 @@
 				750B756826DE20B10039B9FF /* NewContainerView.swift in Sources */,
 				75AA30DE26E4A37600C6A051 /* PackingList+CoreDataClass.swift in Sources */,
 				75AA30D026E4A02D00C6A051 /* PackingListView.swift in Sources */,
+				75EB285D270DA582005EB126 /* MockContainer.swift in Sources */,
 				75E4360A27075867009D9B9A /* ButtonStyles.swift in Sources */,
 				750B756626DE20B10039B9FF /* AppModel.swift in Sources */,
 				750B756426DE20B10039B9FF /* ItemView.swift in Sources */,
+				75EB2860270DA58C005EB126 /* MockPackingList.swift in Sources */,
 				75E436072707537D009D9B9A /* NewListView.swift in Sources */,
 				75AA30E026E4A37600C6A051 /* PackingList+CoreDataProperties.swift in Sources */,
 				750B757C26DE22020039B9FF /* Item+CoreDataProperties.swift in Sources */,

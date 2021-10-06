@@ -32,6 +32,9 @@ struct SettingsView: View {
                     }
                 }
                 .onChange(of: self.appModel.selectedLanguage) {debugprint($0)}
+                Button(action: { self.appModel.prefilledLists() }) {
+                    Text("Gjenopprett forhandsdefinerte lister")
+                }
                 HStack {
                     Button(action: {}) {
                         Text("Remove all items")
