@@ -42,7 +42,7 @@ struct PackingListView: View {
                     items: self.items.filter({$0.container == nil})
                 )
             }*/
-            if self.containers.count == 0 {
+            if self.model.containers?.count == 0 {
                 Section(
                     footer: HStack {
                         Spacer()
@@ -52,6 +52,7 @@ struct PackingListView: View {
                 ) { EmptyView() }
             }
         }
+        .onAppear { debugprint("Lista \(self.model.name) har \(self.model.containers?.count) containerar") }
     }
 }
 
