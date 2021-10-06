@@ -42,6 +42,15 @@ struct PackingListView: View {
                     items: self.items.filter({$0.container == nil})
                 )
             }*/
+            if self.containers.count == 0 {
+                Section(
+                    footer: HStack {
+                        Spacer()
+                        Text("emptyListPrompt").multilineTextAlignment(.center)
+                        Spacer()
+                    }
+                ) { EmptyView() }
+            }
         }
     }
 }
