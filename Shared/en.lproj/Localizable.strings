@@ -35,3 +35,4 @@
 "Standard language %@" = "Standard language (%@)";
 "Unknown language" = "Unknown";
 "emptyListPrompt" = "This list seems empty. Try adding a storage to it.";
+"emptyContainerPrompt" = "No items here yet.";

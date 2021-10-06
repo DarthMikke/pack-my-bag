@@ -53,6 +53,9 @@ struct ContainerView: View {
                     if viewmodel.newItem {
                         NewItemView(isPresented: $viewmodel.newItem, container: self.viewmodel.model)
                     }
+                    else if self.viewmodel.items.isEmpty {
+                        Text(LocalizedStringKey("emptyContainerPrompt")).italic().foregroundColor(.gray)
+                    }
                     ForEach(viewmodel.items, id: \.id) { item in
                         ItemView(item: item)
                             .onDrag { self.appModel.drag(item: item)

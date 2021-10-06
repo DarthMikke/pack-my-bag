@@ -35,3 +35,4 @@
 "Standard language %@" = "Standard (%@)";
 "Unknown language" = "Ukjent";
 "emptyListPrompt" = "Denne lista ser tom ut. Prøv å leggje til ei ny oppbevaring.";
+"emptyContainerPrompt" = "Ingen ting her enno.";
