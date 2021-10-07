@@ -73,6 +73,8 @@
 		75EB285D270DA582005EB126 /* MockContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB285B270DA582005EB126 /* MockContainer.swift */; };
 		75EB285F270DA58C005EB126 /* MockPackingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB285E270DA58C005EB126 /* MockPackingList.swift */; };
 		75EB2860270DA58C005EB126 /* MockPackingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB285E270DA58C005EB126 /* MockPackingList.swift */; };
+		75EB2862270E236E005EB126 /* mockLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2861270E236E005EB126 /* mockLists.swift */; };
+		75EB2863270E236E005EB126 /* mockLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2861270E236E005EB126 /* mockLists.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,7 @@
 		75EB2858270DA575005EB126 /* MockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItem.swift; sourceTree = "<group>"; };
 		75EB285B270DA582005EB126 /* MockContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContainer.swift; sourceTree = "<group>"; };
 		75EB285E270DA58C005EB126 /* MockPackingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPackingList.swift; sourceTree = "<group>"; };
+		75EB2861270E236E005EB126 /* mockLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockLists.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +299,7 @@
 				75EB2858270DA575005EB126 /* MockItem.swift */,
 				75EB285B270DA582005EB126 /* MockContainer.swift */,
 				75EB285E270DA58C005EB126 /* MockPackingList.swift */,
+				75EB2861270E236E005EB126 /* mockLists.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -490,6 +494,7 @@
 				750B754426DE20360039B9FF /* Pack_my_BagApp.swift in Sources */,
 				75EB2836270B133F005EB126 /* SettingsView.swift in Sources */,
 				750B756726DE20B10039B9FF /* NewContainerView.swift in Sources */,
+				75EB2862270E236E005EB126 /* mockLists.swift in Sources */,
 				75AA30DD26E4A37600C6A051 /* PackingList+CoreDataClass.swift in Sources */,
 				75AA30CF26E4A02D00C6A051 /* PackingListView.swift in Sources */,
 				75EB285C270DA582005EB126 /* MockContainer.swift in Sources */,
@@ -526,6 +531,7 @@
 				750B754526DE20360039B9FF /* Pack_my_BagApp.swift in Sources */,
 				75EB2837270B133F005EB126 /* SettingsView.swift in Sources */,
 				750B756826DE20B10039B9FF /* NewContainerView.swift in Sources */,
+				75EB2863270E236E005EB126 /* mockLists.swift in Sources */,
 				75AA30DE26E4A37600C6A051 /* PackingList+CoreDataClass.swift in Sources */,
 				75AA30D026E4A02D00C6A051 /* PackingListView.swift in Sources */,
 				75EB285D270DA582005EB126 /* MockContainer.swift in Sources */,

@@ -36,3 +36,9 @@
 "Unknown language" = "Unknown";
 "emptyListPrompt" = "This list seems empty. Try adding a storage to it.";
 "emptyContainerPrompt" = "No items here yet.";
+"Restore predefined lists" = "Restore predefined lists";
+"Continue?" = "Continue?";
+"This will add some example lists." = "This will add some example lists.";
+"Continue" = "Continue";
+"Cancel" = "Cancel";
+"Removing all lists alert" = "This will remove all lists you have created.";

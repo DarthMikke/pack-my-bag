@@ -36,3 +36,9 @@
 "Unknown language" = "Ukjent";
 "emptyListPrompt" = "Denne lista ser tom ut. Prøv å leggje til ei ny oppbevaring.";
 "emptyContainerPrompt" = "Ingen ting her enno.";
+"Restore predefined lists" = "Gjenopprett forhandsdefinerte lister";
+"Continue?" = "Halde fram?";
+"This will add some example lists." = "Dette vil leggje til nokon eksempellister.";
+"Continue" = "Hald fram";
+"Cancel" = "Avbryt";
+"Removing all lists alert" = "Dette vil slette alle listene du har oppretta.";

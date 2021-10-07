@@ -11,6 +11,7 @@ import Combine
 struct SettingsView: View {
     //@EnvironmentObject var appModel: AppModel
     @StateObject var appModel: AppModel
+    @State var showingAlert = false
     var cancellable: AnyCancellable?
     
     init(_ appModel: AppModel) {
@@ -33,12 +34,38 @@ struct SettingsView: View {
                 }
                 .onChange(of: self.appModel.selectedLanguage) {debugprint($0)}
                 Button(action: { self.appModel.prefilledLists() }) {
-                    Text("Gjenopprett forhandsdefinerte lister")
+                    Text(LocalizedStringKey("Restore predefined lists"))
+                }
+                .alert(isPresented: $showingAlert) {
+                    Alert(
+                        title: Text(LocalizedStringKey("Continue?")),
+                        message: Text(LocalizedStringKey("This will add some example lists.")),
+                        primaryButton: .default(
+                            Text(LocalizedStringKey("Continue")),
+                            action: {
+                                self.appModel.prefilledLists()
+                            }
+                        ),
+                        secondaryButton: .default(Text(LocalizedStringKey("Cancel"))))
                 }
                 HStack {
-                    Button(action: {}) {
-                        Text("Remove all items")
+                    Button(action: { showingAlert = true }) {
+                        Text(LocalizedStringKey("Remove all items"))
                     }.foregroundColor(.red)
+                        .alert(isPresented: $showingAlert) {
+                            Alert(
+                                title: Text(LocalizedStringKey("Continue?")),
+                                message: Text(LocalizedStringKey("Removing all lists alert")),
+                                primaryButton: .destructive(
+                                    Text(LocalizedStringKey("Continue")),
+                                    action: {
+                                        self.appModel.purgeAllItems()
+                                        self.appModel.prefilledLists()
+                                    }
+                                ),
+                                secondaryButton: .default(Text(LocalizedStringKey("Cancel")))
+                            )
+                        }
                 }
             }
             Section(
