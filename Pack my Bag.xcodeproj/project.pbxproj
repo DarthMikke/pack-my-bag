@@ -75,6 +75,8 @@
 		75EB2860270DA58C005EB126 /* MockPackingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB285E270DA58C005EB126 /* MockPackingList.swift */; };
 		75EB2862270E236E005EB126 /* mockLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2861270E236E005EB126 /* mockLists.swift */; };
 		75EB2863270E236E005EB126 /* mockLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2861270E236E005EB126 /* mockLists.swift */; };
+		75EB2865270F8D64005EB126 /* ListSortingPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2864270F8D64005EB126 /* ListSortingPicker.swift */; };
+		75EB2866270F8D64005EB126 /* ListSortingPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75EB2864270F8D64005EB126 /* ListSortingPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,7 @@
 		75EB285B270DA582005EB126 /* MockContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContainer.swift; sourceTree = "<group>"; };
 		75EB285E270DA58C005EB126 /* MockPackingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPackingList.swift; sourceTree = "<group>"; };
 		75EB2861270E236E005EB126 /* mockLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mockLists.swift; sourceTree = "<group>"; };
+		75EB2864270F8D64005EB126 /* ListSortingPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSortingPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 		750B751026DE202E0039B9FF = {
 			isa = PBXGroup;
 			children = (
+				75EB2851270C8C2B005EB126 /* Pack my Bag (iOS).entitlements */,
 				750B758526DE22770039B9FF /* Core Data */,
 				75AA30DA26E4A05E00C6A051 /* Models */,
 				75AA30D926E4A05500C6A051 /* Views */,
@@ -226,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				750B752326DE20360039B9FF /* Info.plist */,
-				75EB2851270C8C2B005EB126 /* Pack my Bag (iOS).entitlements */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				75E4360827075867009D9B9A /* ButtonStyles.swift */,
 				75EB2835270B133F005EB126 /* SettingsView.swift */,
 				75EB284E270C75A8005EB126 /* MainView.swift */,
+				75EB2864270F8D64005EB126 /* ListSortingPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -481,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75EB2865270F8D64005EB126 /* ListSortingPicker.swift in Sources */,
 				75AA309726DF91CD00C6A051 /* ItemViewModel.swift in Sources */,
 				75EB284F270C75A8005EB126 /* MainView.swift in Sources */,
 				750B757926DE22020039B9FF /* Item+CoreDataClass.swift in Sources */,
@@ -518,6 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75EB2866270F8D64005EB126 /* ListSortingPicker.swift in Sources */,
 				75AA309826DF91CD00C6A051 /* ItemViewModel.swift in Sources */,
 				75EB2850270C75A8005EB126 /* MainView.swift in Sources */,
 				750B757A26DE22020039B9FF /* Item+CoreDataClass.swift in Sources */,

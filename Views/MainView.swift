@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var appModel: AppModel
+    @State var sortingOrder: SortingOrder = .createdNto
     
     @FetchRequest(sortDescriptors: [])
     private var lists: FetchedResults<PackingList>
@@ -17,7 +18,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(lists, id: \.id) { list in
+                ForEach(lists.sorted(by: appModel.listSorter), id: \.id) { list in
                     NavigationLink(
                         destination: PackingListView(model: list)
                             .navigationTitle(list.name ?? "Ukjent liste")
@@ -76,6 +77,7 @@ struct MainView: View {
                         selection: self.$appModel.selection) {
                         Text("Add item")
                     }*/
+                    ListSortingPicker(selection: self.$appModel.sortListsBy)
                     Button(action: {
                         self.appModel.newList = true
                     }) {
@@ -113,6 +115,7 @@ struct MainView: View {
             }*/
         }
     }
+    
 }
 
 struct MainView_Previews: PreviewProvider {

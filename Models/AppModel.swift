@@ -6,6 +6,27 @@ public enum AppState: String {
     case main = "main", newItem = "newItem", newContainer = "new container"
 }
 
+public enum SortingOrder: String, CaseIterable {
+    case createdOtn, createdNto, modifiedOtn, modifiedNto, AZ, ZA
+    
+    var long: String {
+        switch self {
+        case .createdOtn:
+            return "Created, oldest to newest"
+        case .createdNto:
+            return "Created, newest to oldest"
+        case .modifiedOtn:
+            return "Modified, oldest to newest"
+        case .modifiedNto:
+            return "Modified, newest to oldest"
+        case .AZ:
+            return "A-Z"
+        case .ZA:
+            return "Z-A"
+        }
+    }
+}
+
 public class AppModel: ObservableObject {/*
     @Published public var items: [Item]
     @Published public var containers: [Container] */
@@ -18,6 +39,7 @@ public class AppModel: ObservableObject {/*
         	return selectedLanguage == .system ? Locale.current.languageCode! : selectedLanguage.short
         }
     }
+    @Published public var sortListsBy: SortingOrder = SortingOrder(rawValue: UserDefaults.standard.string(forKey: "sortListsBy") ?? "createdNto") ?? .createdNto
     public var draggedItem: Item? = nil
     public var moc: NSManagedObjectContext? = nil
     
@@ -86,6 +108,26 @@ public class AppModel: ObservableObject {/*
                 }
             }
         }
+    }
+    
+    public func listSorter(lhs: PackingList, rhs: PackingList) -> Bool {
+        switch self.sortListsBy {
+        case .createdNto:
+            return lhs.created! < rhs.created!
+        case .createdOtn:
+            return lhs.created! > rhs.created!
+        case .modifiedNto:
+            return lhs.modified! < rhs.modified!
+        case .modifiedOtn:
+            return lhs.modified! > rhs.modified!
+        case .AZ:
+            return lhs.name! < rhs.name!
+        case .ZA:
+            return lhs.name! > rhs.name!
+        default:
+            return true
+        }
+        return true
     }
     
     public func drag(item: Item) {
@@ -161,6 +203,7 @@ public class AppModel: ObservableObject {/*
         container.id = id
         container.name = name
         container.packingList = result as! PackingList
+        container.packingList!.modified = Date()
         
         self.saveContext()
     }
@@ -192,6 +235,8 @@ public class AppModel: ObservableObject {/*
         let list = PackingList(context: self.moc!)
         list.id = id
         list.name = name
+        list.created = Date()
+        list.modified = Date()
         
         self.saveContext()
     }
