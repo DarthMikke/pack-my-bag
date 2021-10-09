@@ -19,6 +19,7 @@ extension PackingList {
     @NSManaged public var name: String?
     @NSManaged public var id: UUID?
     @NSManaged public var created: Date?
+    @NSManaged public var modified: Date?
     @NSManaged public var containers: NSSet?
 
 }

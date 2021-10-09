@@ -12,4 +12,9 @@ extension PackingList {
         let set = containers as? Set<Container> ?? []
         return set.sorted { $0.name! < $1.name! }
     }
+    
+    func updateModifiedDate() {
+        self.modified = Date()
+        try? self.managedObjectContext!.save()
+    }
 }
