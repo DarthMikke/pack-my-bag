@@ -286,10 +286,10 @@
 				750B756026DE20B00039B9FF /* NewContainerView.swift */,
 				750B755E26DE20B00039B9FF /* ItemView.swift */,
 				750B756126DE20B10039B9FF /* NewItemView.swift */,
-				75E4360827075867009D9B9A /* ButtonStyles.swift */,
 				75EB2835270B133F005EB126 /* SettingsView.swift */,
 				75EB284E270C75A8005EB126 /* MainView.swift */,
 				75EB2864270F8D64005EB126 /* ListSortingPicker.swift */,
+				75E4360827075867009D9B9A /* ButtonStyles.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

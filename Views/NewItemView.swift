@@ -47,6 +47,8 @@ public struct NewItemView: View {
         item.modified = Date()
         
         self.appModel.saveContext()
+        
+        self.container!.updateModifiedDate()
     }
     
     func empty() {
