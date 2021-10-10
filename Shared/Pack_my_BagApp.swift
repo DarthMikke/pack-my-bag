@@ -15,6 +15,7 @@ struct Pack_my_BagApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environment(\.colorScheme, .light)
         }
     }
 }
