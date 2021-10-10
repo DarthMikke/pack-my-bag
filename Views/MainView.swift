@@ -26,12 +26,10 @@ struct MainView: View {
                                 #if os(iOS)
                                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                                     Spacer()
-                                    /*NavigationLink(
-                                        destination: NewItemView(),
-                                        tag: AppState.newItem.rawValue,
-                                        selection: self.$appModel.selection) {
-                                        Text("Add item")
-                                    }*/
+/*                                    ListSortingPicker(selection: self.$appModel.sortInsideListsBy)
+                                        .onChange(of: self.appModel.sortInsideListsBy) {
+                                            UserDefaults.standard.set($0.rawValue, forKey: "sortInsideListsBy")
+                                        }*/
                                     Button(action: { self.appModel.newContainer = true }) {
                                         Text("Add container")
                                     }
@@ -78,6 +76,9 @@ struct MainView: View {
                         Text("Add item")
                     }*/
                     ListSortingPicker(selection: self.$appModel.sortListsBy)
+                        .onChange(of: self.appModel.sortListsBy) {
+                            UserDefaults.standard.set($0.rawValue, forKey: "sortListsBy")
+                        }
                     Button(action: {
                         self.appModel.newList = true
                     }) {
