@@ -9,13 +9,19 @@ import SwiftUI
 
 struct ListSortingPicker: View {
     @Binding var selection: SortingOrder
+    let completionHandler: (SortingOrder) -> Void = {_ in }
     
     var body: some View {
         Menu {
             ForEach(SortingOrder.allCases, id: \.rawValue) { sortingOrder in
-                Button(sortingOrder.long, action: {
-                    self.selection = sortingOrder
-                })
+                Button(
+                    action: {
+                        self.selection = sortingOrder
+                        self.completionHandler(sortingOrder)
+                    }
+                ) {
+                    Text(LocalizedStringKey(sortingOrder.long))
+                }
             }
         } label: {
             Label("Sort by", systemImage: "arrow.up.arrow.down")

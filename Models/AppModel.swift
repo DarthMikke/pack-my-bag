@@ -19,6 +19,7 @@ public class AppModel: ObservableObject {/*
         }
     }
     @Published public var sortListsBy: SortingOrder = SortingOrder(rawValue: UserDefaults.standard.string(forKey: "sortListsBy") ?? "createdNto") ?? .createdNto
+    @Published public var sortInsideListsBy: SortingOrder = SortingOrder(rawValue: UserDefaults.standard.string(forKey: "sortInsideListsBy") ?? "createdNto") ?? .createdNto
     public var draggedItem: Item? = nil
     public var moc: NSManagedObjectContext? = nil
     
@@ -67,6 +68,9 @@ public class AppModel: ObservableObject {/*
         
         debugprint("Første køyring. Set opp appen...")
         UserDefaults.standard.set("system", forKey: "language")
+        UserDefaults.standard.set("modifiedNto", forKey: "sortListsBy")
+        UserDefaults.standard.set("modifiedNto", forKey: "sortInsideListsBy")
+        
         UserDefaults.standard.set(true, forKey: "hasBeenRun")
         debugprint("Språkval set.")
         debugprint("Fyller ut forhandsdefinerte lister...")
