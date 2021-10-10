@@ -16,6 +16,7 @@ public struct ItemView: View {
                 .toggleStyle(CustomToggleStyle())
                 .accessibility(label: Text("Packed"))
                 .disabled(viewmodel.isEditing)
+                .onChange(of: viewmodel.isPacked) {_ in withAnimation { self.viewmodel.saveChanges() }}
             if !viewmodel.isEditing {
                 HStack {
                     if self.viewmodel.isPacked {
