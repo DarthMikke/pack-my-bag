@@ -43,8 +43,12 @@ public struct NewItemView: View {
         item.name = self.name
         item.id = UUID()
         item.container = self.container
+        item.created = Date()
+        item.modified = Date()
         
         self.appModel.saveContext()
+        
+        self.container!.updateModifiedDate()
     }
     
     func empty() {

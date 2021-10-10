@@ -32,12 +32,19 @@ public class ItemViewModel: ObservableObject {
     
     public func saveChanges() {
         self.model.name = self.name
+        self.model.modified = Date()
         self.model.isPacked = self.isPacked
         
         debugprint("Saving changes to the item...")
         self.saveContext()
-        self.isEditing = false
         debugprint("Saved changes to the item.")
+        debugprint("Updating modified date of the parent container...")
+        if self.model.container != nil {
+            self.model.container!.updateModifiedDate()
+        } else {
+            debugprint("No container found.")
+        }
+        self.isEditing = false
     }
     
     public func remove() {

@@ -42,3 +42,13 @@
 "Continue" = "Continue";
 "Cancel" = "Cancel";
 "Removing all lists alert" = "This will remove all lists you have created.";
+
+"Sort by" = "Sort by";
+"Sort lists" = "Sort lists";
+"Sort inside lists" = "Sort inside lists";
+"Created, oldest to newest" = "Created, oldest first";
+"Created, newest to oldest" = "Created, newest first";
+"Modified, oldest to newest" = "Modified, oldest first";
+"Modified, newest to oldest" = "Modified, newest first";
+"A-Z" = "A–Z";
+"Z-A" = "Z-A";

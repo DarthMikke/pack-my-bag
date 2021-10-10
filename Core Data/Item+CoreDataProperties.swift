@@ -20,6 +20,7 @@ extension Item {
     @NSManaged public var isPacked: Bool
     @NSManaged public var name: String?
     @NSManaged public var created: Date?
+    @NSManaged public var modified: Date?
     @NSManaged public var container: Container?
 
 }

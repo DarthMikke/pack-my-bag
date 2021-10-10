@@ -20,6 +20,8 @@ extension Container {
     @NSManaged public var name: String?
     @NSManaged public var items: NSSet?
     @NSManaged public var packingList: PackingList?
+    @NSManaged public var created: Date?
+    @NSManaged public var modified: Date?
 
 }
 

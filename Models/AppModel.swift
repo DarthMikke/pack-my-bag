@@ -18,6 +18,8 @@ public class AppModel: ObservableObject {/*
         	return selectedLanguage == .system ? Locale.current.languageCode! : selectedLanguage.short
         }
     }
+    @Published public var sortListsBy: SortingOrder = SortingOrder(rawValue: UserDefaults.standard.string(forKey: "sortListsBy") ?? "createdNto") ?? .createdNto
+    @Published public var sortInsideListsBy: SortingOrder = SortingOrder(rawValue: UserDefaults.standard.string(forKey: "sortInsideListsBy") ?? "createdNto") ?? .createdNto
     public var draggedItem: Item? = nil
     public var moc: NSManagedObjectContext? = nil
     
@@ -66,6 +68,9 @@ public class AppModel: ObservableObject {/*
         
         debugprint("Første køyring. Set opp appen...")
         UserDefaults.standard.set("system", forKey: "language")
+        UserDefaults.standard.set("modifiedNto", forKey: "sortListsBy")
+        UserDefaults.standard.set("modifiedNto", forKey: "sortInsideListsBy")
+        
         UserDefaults.standard.set(true, forKey: "hasBeenRun")
         debugprint("Språkval set.")
         debugprint("Fyller ut forhandsdefinerte lister...")
@@ -85,6 +90,40 @@ public class AppModel: ObservableObject {/*
                     self.addItem(name: item.name!, containerId: containerId.uuidString)
                 }
             }
+        }
+    }
+    
+    public func listSorter(lhs: PackingList, rhs: PackingList) -> Bool {
+        switch self.sortListsBy {
+        case .createdNto:
+            return lhs.created! > rhs.created!
+        case .createdOtn:
+            return lhs.created! < rhs.created!
+        case .modifiedNto:
+            return lhs.modified! > rhs.modified!
+        case .modifiedOtn:
+            return lhs.modified! < rhs.modified!
+        case .AZ:
+            return lhs.name! < rhs.name!
+        case .ZA:
+            return lhs.name! > rhs.name!
+        }
+    }
+    
+    public func insideListSorter<O>(lhs: O, rhs: O) -> Bool where O: SortableObject {
+        switch self.sortInsideListsBy {
+        case .createdNto:
+            return lhs.created! > rhs.created!
+        case .createdOtn:
+            return lhs.created! < rhs.created!
+        case .modifiedNto:
+            return lhs.modified! > rhs.modified!
+        case .modifiedOtn:
+            return lhs.modified! < rhs.modified!
+        case .AZ:
+            return lhs.name! < rhs.name!
+        case .ZA:
+            return lhs.name! > rhs.name!
         }
     }
     
@@ -161,6 +200,7 @@ public class AppModel: ObservableObject {/*
         container.id = id
         container.name = name
         container.packingList = result as! PackingList
+        container.packingList!.modified = Date()
         
         self.saveContext()
     }
@@ -192,6 +232,8 @@ public class AppModel: ObservableObject {/*
         let list = PackingList(context: self.moc!)
         list.id = id
         list.name = name
+        list.created = Date()
+        list.modified = Date()
         
         self.saveContext()
     }

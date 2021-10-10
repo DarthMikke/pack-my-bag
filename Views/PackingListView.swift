@@ -30,7 +30,7 @@ struct PackingListView: View {
     
     var body: some View {
         List {
-            ForEach(containers.filter({$0.packingList?.id == model.id}), id: \.id) { container in
+            ForEach(containers.filter({$0.packingList?.id == model.id}).sorted(by: self.appModel.insideListSorter), id: \.id) { container in
                 ContainerView(container)
                     .onDrop(of: ["public.plain-text"], delegate: ItemDropDelegate(appModel: self.appModel, target: container))
             }

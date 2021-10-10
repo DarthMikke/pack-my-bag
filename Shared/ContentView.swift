@@ -52,11 +52,15 @@ struct ContentView: View {
     ///Migrate to new version of core data storage.
     private func migrate() {
         //MARK: - Missing attributes in item, container
-        var missing = [0, 0, 0] // item timestamps, item ids, container ids.
+        var missing = [0, 0, 0, 0, 0, 0, ] // item timestamps, item ids, container ids.
         for item in items {
             if item.created == nil {
                 item.created = Date()
                 missing[0] += 1
+            }
+            if item.modified == nil {
+                item.modified = Date()
+                missing[3] += 1
             }
             if item.id == nil {
                 item.id = UUID()
@@ -68,10 +72,21 @@ struct ContentView: View {
                 container.id = UUID()
                 missing[2] += 1
             }
+            if container.modified == nil {
+                container.modified = Date()
+                missing[4] += 1
+            }
+            if container.created == nil {
+                container.created = Date()
+                missing[5] += 1
+            }
         }
         print("\(#fileID):\(#line): \(missing[0]) ting mangla opprettingsdato.")
+        print("\(#fileID):\(#line): \(missing[3]) ting mangla modifikasjonsdato.")
         print("\(#fileID):\(#line): \(missing[1]) ting mangla ID.")
         print("\(#fileID):\(#line): \(missing[2]) kontainerar mangla ID.")
+        print("\(#fileID):\(#line): \(missing[4]) kontainerar mangla modifikasjonsdato.")
+        print("\(#fileID):\(#line): \(missing[5]) kontainerar mangla opprettingsdato.")
         
         //MARK: - Implementing Packing Lists
         if lists.map({$0}).isEmpty {
@@ -90,8 +105,12 @@ struct ContentView: View {
                 if list.created == nil {
                     list.created = Date()
                 }
+                if list.modified == nil {
+                    list.modified = Date()
+                }
             }
         }
+        
         let found = containers.filter({$0.packingList == nil}).count
         print("\(#fileID):\(#line): Fann \(found) kontainerar utan liste.")
         if found > 0 {

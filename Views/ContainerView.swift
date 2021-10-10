@@ -56,7 +56,7 @@ struct ContainerView: View {
                     else if self.viewmodel.items.isEmpty {
                         Text(LocalizedStringKey("emptyContainerPrompt")).italic().foregroundColor(.gray)
                     }
-                    ForEach(viewmodel.items, id: \.id) { item in
+                    ForEach(viewmodel.items.sorted(by: self.appModel.insideListSorter), id: \.id) { item in
                         ItemView(item: item)
                             .onDrag { self.appModel.drag(item: item)
                                 /* print("\(#fileID):\(#line): Dreg \(item.id!.uuidString) ") */

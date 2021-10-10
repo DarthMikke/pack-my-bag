@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var appModel: AppModel
+    @State var sortingOrder: SortingOrder = .createdNto
     
     @FetchRequest(sortDescriptors: [])
     private var lists: FetchedResults<PackingList>
@@ -17,7 +18,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(lists, id: \.id) { list in
+                ForEach(lists.sorted(by: appModel.listSorter), id: \.id) { list in
                     NavigationLink(
                         destination: PackingListView(model: list)
                             .navigationTitle(list.name ?? "Ukjent liste")
@@ -25,12 +26,10 @@ struct MainView: View {
                                 #if os(iOS)
                                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                                     Spacer()
-                                    /*NavigationLink(
-                                        destination: NewItemView(),
-                                        tag: AppState.newItem.rawValue,
-                                        selection: self.$appModel.selection) {
-                                        Text("Add item")
-                                    }*/
+/*                                    ListSortingPicker(selection: self.$appModel.sortInsideListsBy)
+                                        .onChange(of: self.appModel.sortInsideListsBy) {
+                                            UserDefaults.standard.set($0.rawValue, forKey: "sortInsideListsBy")
+                                        }*/
                                     Button(action: { self.appModel.newContainer = true }) {
                                         Text("Add container")
                                     }
@@ -76,6 +75,10 @@ struct MainView: View {
                         selection: self.$appModel.selection) {
                         Text("Add item")
                     }*/
+                    ListSortingPicker(selection: self.$appModel.sortListsBy)
+                        .onChange(of: self.appModel.sortListsBy) {
+                            UserDefaults.standard.set($0.rawValue, forKey: "sortListsBy")
+                        }
                     Button(action: {
                         self.appModel.newList = true
                     }) {
@@ -113,6 +116,7 @@ struct MainView: View {
             }*/
         }
     }
+    
 }
 
 struct MainView_Previews: PreviewProvider {

@@ -42,6 +42,11 @@ class ContainerViewModel: ObservableObject {
         }
         
         self.model!.name = name
+        self.model!.modified = Date()
+        
+        if self.model!.packingList != nil {
+            self.model!.packingList!.modified = Date()
+        }
         self.saveContext()
         
         self.isEditing = false
