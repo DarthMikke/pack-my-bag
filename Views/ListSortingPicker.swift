@@ -24,7 +24,7 @@ struct ListSortingPicker: View {
                 }
             }
         } label: {
-            Label("Sort by", systemImage: "arrow.up.arrow.down")
+            Label(LocalizedStringKey("Sort by"), systemImage: "arrow.up.arrow.down")
         }
     }
 }

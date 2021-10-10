@@ -42,3 +42,13 @@
 "Continue" = "Hald fram";
 "Cancel" = "Avbryt";
 "Removing all lists alert" = "Dette vil slette alle listene du har oppretta.";
+
+"Sort by" = "Sorter...";
+"Sort lists" = "Sorter lister";
+"Sort inside lists" = "Sorter i lister";
+"Created, oldest to newest" = "Eldste på topp";
+"Created, newest to oldest" = "Nyaste på topp";
+"Modified, oldest to newest" = "Endringsdato, eldste på topp";
+"Modified, newest to oldest" = "Endringsdato, nyaste på topp";
+"A-Z" = "A–Z";
+"Z-A" = "Z-A";
