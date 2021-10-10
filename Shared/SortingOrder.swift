@@ -8,7 +8,7 @@
 import Foundation
 
 public enum SortingOrder: String, CaseIterable {
-    case createdNto, createdOtn, modifiedNto, modifiedOtn, AZ, ZA
+    case createdNto, createdOtn, /*modifiedNto, modifiedOtn,*/ AZ, ZA
     
     var long: String {
         switch self {
@@ -16,10 +16,10 @@ public enum SortingOrder: String, CaseIterable {
             return "Created, oldest to newest"
         case .createdNto:
             return "Created, newest to oldest"
-        case .modifiedOtn:
+/*        case .modifiedOtn:
             return "Modified, oldest to newest"
         case .modifiedNto:
-            return "Modified, newest to oldest"
+            return "Modified, newest to oldest"*/
         case .AZ:
             return "A-Z"
         case .ZA:

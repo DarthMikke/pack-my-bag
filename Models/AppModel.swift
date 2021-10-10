@@ -22,6 +22,7 @@ public class AppModel: ObservableObject {/*
     @Published public var sortInsideListsBy: SortingOrder = SortingOrder(rawValue: UserDefaults.standard.string(forKey: "sortInsideListsBy") ?? "createdNto") ?? .createdNto
     public var draggedItem: Item? = nil
     public var moc: NSManagedObjectContext? = nil
+    public var collapsedContainers: [UUID] = []
     
     public init() {
         self.firstRun()
@@ -93,16 +94,17 @@ public class AppModel: ObservableObject {/*
         }
     }
     
+    //-MARK: Sorting
     public func listSorter(lhs: PackingList, rhs: PackingList) -> Bool {
         switch self.sortListsBy {
         case .createdNto:
             return lhs.created! > rhs.created!
         case .createdOtn:
             return lhs.created! < rhs.created!
-        case .modifiedNto:
+        /*case .modifiedNto:
             return lhs.modified! > rhs.modified!
         case .modifiedOtn:
-            return lhs.modified! < rhs.modified!
+            return lhs.modified! < rhs.modified!*/
         case .AZ:
             return lhs.name! < rhs.name!
         case .ZA:
@@ -116,10 +118,10 @@ public class AppModel: ObservableObject {/*
             return lhs.created! > rhs.created!
         case .createdOtn:
             return lhs.created! < rhs.created!
-        case .modifiedNto:
+        /*case .modifiedNto:
             return lhs.modified! > rhs.modified!
         case .modifiedOtn:
-            return lhs.modified! < rhs.modified!
+            return lhs.modified! < rhs.modified!*/
         case .AZ:
             return lhs.name! < rhs.name!
         case .ZA:
@@ -127,6 +129,7 @@ public class AppModel: ObservableObject {/*
         }
     }
     
+    //-MARK: Drag&drop
     public func drag(item: Item) {
         self.draggedItem = item
     }
@@ -203,6 +206,14 @@ public class AppModel: ObservableObject {/*
         container.packingList!.modified = Date()
         
         self.saveContext()
+    }
+    
+    public func collapse(id: UUID) {
+        if self.collapsedContainers.contains(id) {
+            self.collapsedContainers.remove(at: self.collapsedContainers.firstIndex(of: id)!)
+        } else {
+            self.collapsedContainers.append(id)
+        }
     }
     
     ///Ny kontainer skal vera synleg.

@@ -13,11 +13,11 @@ struct ContainerView: View {
     
     
     init(_ container: Container) {
-        self.viewmodel = ContainerViewModel(container)
+        self.viewmodel = ContainerViewModel(container, isCollapsed: true)
     }
     
     init(_ name: String, items: [Item]) {
-        self.viewmodel = ContainerViewModel(name, items: items)
+        self.viewmodel = ContainerViewModel(name, items: items, isCollapsed: true)
     }
     
     var body: some View {
@@ -27,10 +27,11 @@ struct ContainerView: View {
                     Button(action: {
                         withAnimation {
                             self.viewmodel.collapsed.toggle()
+                            self.appModel.collapse(id: self.viewmodel.id)
                         }
                     }) {
                         Image(systemName:
-                                viewmodel.collapsed
+                                self.appModel.collapsedContainers.contains(self.viewmodel.id)
                                     ? "arrowtriangle.right.fill"
                                     : "arrowtriangle.down.fill"
                         )
@@ -49,7 +50,7 @@ struct ContainerView: View {
                     }) { Image(systemName: "plus") }
                 }.buttonStyle(CustomHeaderButtonStyle())
             ) {
-                if !viewmodel.collapsed {
+                if !self.appModel.collapsedContainers.contains(self.viewmodel.id) {
                     if viewmodel.newItem {
                         NewItemView(isPresented: $viewmodel.newItem, container: self.viewmodel.model)
                     }
@@ -68,6 +69,9 @@ struct ContainerView: View {
                     }
                     .onDelete(perform: { print("\(#fileID):\(#line): \($0)") })
                 }
+            }
+            .onAppear {
+                self.viewmodel.collapsed = self.appModel.collapsedContainers.contains(self.viewmodel.id)
             }
             .sheet(isPresented: $viewmodel.isEditing) {
             //TODO: Kan dette integrerast i NewContainerView?

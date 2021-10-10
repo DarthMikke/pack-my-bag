@@ -9,20 +9,25 @@ import Foundation
 import SwiftUI
 
 class ContainerViewModel: ObservableObject {
-    @Published var collapsed = false
+    @Published var collapsed: Bool
     @Published var isEditing = false
     @Published var newItem = false
     let model: Container?
+    let id: UUID
     @Published var name: String
     var items: [Item]
     
-    init(_ container: Container) {
+    init(_ container: Container, isCollapsed: Bool) {
+        self._collapsed = Published(initialValue: isCollapsed)
+        self.id = container.id!
         self.model = container
         self.name = container.name!
         self.items = container.itemArray
     }
     
-    init(_ name: String, items: [Item]) {
+    init(_ name: String, items: [Item], isCollapsed: Bool) {
+        self._collapsed = Published(initialValue: isCollapsed)
+        self.id = UUID()
         self.model = nil
         self.name = name
         self.items = items
