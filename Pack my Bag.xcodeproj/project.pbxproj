@@ -51,6 +51,10 @@
 		75AA30E026E4A37600C6A051 /* PackingList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA30DC26E4A37600C6A051 /* PackingList+CoreDataProperties.swift */; };
 		75AA30F226E4A3D000C6A051 /* PackingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA30F126E4A3D000C6A051 /* PackingList.swift */; };
 		75AA30F326E4A3D000C6A051 /* PackingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AA30F126E4A3D000C6A051 /* PackingList.swift */; };
+		75C84C972711E365006AA786 /* SortingOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C84C962711E365006AA786 /* SortingOrder.swift */; };
+		75C84C982711E365006AA786 /* SortingOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C84C962711E365006AA786 /* SortingOrder.swift */; };
+		75C84C9A271227E4006AA786 /* SortableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C84C99271227E4006AA786 /* SortableObject.swift */; };
+		75C84C9B271227E4006AA786 /* SortableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C84C99271227E4006AA786 /* SortableObject.swift */; };
 		75E436062707537D009D9B9A /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E436052707537D009D9B9A /* NewListView.swift */; };
 		75E436072707537D009D9B9A /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E436052707537D009D9B9A /* NewListView.swift */; };
 		75E4360927075867009D9B9A /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E4360827075867009D9B9A /* ButtonStyles.swift */; };
@@ -129,6 +133,8 @@
 		75AA30DB26E4A37600C6A051 /* PackingList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackingList+CoreDataClass.swift"; sourceTree = "<group>"; };
 		75AA30DC26E4A37600C6A051 /* PackingList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PackingList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		75AA30F126E4A3D000C6A051 /* PackingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingList.swift; sourceTree = "<group>"; };
+		75C84C962711E365006AA786 /* SortingOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingOrder.swift; sourceTree = "<group>"; };
+		75C84C99271227E4006AA786 /* SortableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortableObject.swift; sourceTree = "<group>"; };
 		75E436052707537D009D9B9A /* NewListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
 		75E4360827075867009D9B9A /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		75EB283227089CB3005EB126 /* functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = functions.swift; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 				75EB283227089CB3005EB126 /* functions.swift */,
 				75EB2847270B2880005EB126 /* Localizable.strings */,
 				75EB284B270C6696005EB126 /* AppLanguage.swift */,
+				75C84C962711E365006AA786 /* SortingOrder.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -273,6 +280,7 @@
 				75AA30DB26E4A37600C6A051 /* PackingList+CoreDataClass.swift */,
 				75AA30DC26E4A37600C6A051 /* PackingList+CoreDataProperties.swift */,
 				75AA30F126E4A3D000C6A051 /* PackingList.swift */,
+				75C84C99271227E4006AA786 /* SortableObject.swift */,
 			);
 			path = "Core Data";
 			sourceTree = "<group>";
@@ -500,7 +508,9 @@
 				75EB2836270B133F005EB126 /* SettingsView.swift in Sources */,
 				750B756726DE20B10039B9FF /* NewContainerView.swift in Sources */,
 				75EB2862270E236E005EB126 /* mockLists.swift in Sources */,
+				75C84C972711E365006AA786 /* SortingOrder.swift in Sources */,
 				75AA30DD26E4A37600C6A051 /* PackingList+CoreDataClass.swift in Sources */,
+				75C84C9A271227E4006AA786 /* SortableObject.swift in Sources */,
 				75AA30CF26E4A02D00C6A051 /* PackingListView.swift in Sources */,
 				75EB285C270DA582005EB126 /* MockContainer.swift in Sources */,
 				75E4360927075867009D9B9A /* ButtonStyles.swift in Sources */,
@@ -538,7 +548,9 @@
 				75EB2837270B133F005EB126 /* SettingsView.swift in Sources */,
 				750B756826DE20B10039B9FF /* NewContainerView.swift in Sources */,
 				75EB2863270E236E005EB126 /* mockLists.swift in Sources */,
+				75C84C982711E365006AA786 /* SortingOrder.swift in Sources */,
 				75AA30DE26E4A37600C6A051 /* PackingList+CoreDataClass.swift in Sources */,
+				75C84C9B271227E4006AA786 /* SortableObject.swift in Sources */,
 				75AA30D026E4A02D00C6A051 /* PackingListView.swift in Sources */,
 				75EB285D270DA582005EB126 /* MockContainer.swift in Sources */,
 				75E4360A27075867009D9B9A /* ButtonStyles.swift in Sources */,
